@@ -226,6 +226,215 @@
         </div> <!-- container ends -->
     </div> <!-- advantages ends -->
 
+    <div id="hot"> <!-- hot top-products begins -->
+        <div class="box"> <!-- box begins -->
+            <div class="container"> <!-- container begins -->
+                <div class="col-md-12"> <!-- col-md-12 begins -->
+                    <h2>
+                        Top Products
+                    </h2>
+                </div> <!-- col-md-12 ends -->
+            </div> <!-- container ends -->
+        </div> <!-- box ends -->
+    </div> <!-- hot top-products ends -->
+
+    <div id="content" class="container"> <!-- container begins -->
+        <div class="row"> <!-- row begins -->
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Banana Chips
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 240</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail2.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Potato Chips
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 150</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Turmeric Powder
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 250</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail4.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Turmeric Powder
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 250</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Banana Chips
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 240</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail2.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Potato Chips
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 150</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Turmeric Powder
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 250</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+            <div class="col-sm-4 col-sm-6 single"> <!-- col-sm-4 col-sm-6 single begins -->
+                <div class="product"> <!-- product begins -->
+                    <a href="details.php">
+                        <img class="img-responsive" src="admin_area/product_images/product-thumbnail4.jpg" alt="Product Image">
+                    </a>
+                    <div class="text"> <!-- text begins -->
+                        <h3>
+                            <a href="details.php">
+                                Turmeric Powder
+                            </a>
+                        </h3>
+                        <p class="price">Rs. 250</p>
+                        <p class="button">
+                            <a href="details.php" class="btn btn-default">View Details</a>
+                            <a href="details.php" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart">
+                                    Add to cart
+                                </i>
+                            </a>
+                        </p>
+                    </div> <!-- text ends -->
+                </div> <!-- product ends -->
+            </div> <!-- col-sm-4 col-sm-6 single ends -->
+
+        </div> <!-- row ends -->
+    </div> <!-- container ends -->
+
 <script src="js/jquery-331.min.js"></script>
 <script src="js/bootstrap-337.min.js"></script>
 
