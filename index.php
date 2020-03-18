@@ -179,6 +179,53 @@
 
     </div> <!-- container SLIDER ends -->
 
+    <div id="advantages"> <!-- advantages begins -->
+        <div class="container"> <!-- container begins -->
+            <div class="same-height-row"> <!-- same-height-row begins -->
+
+                <div class="col-sm-4"> <!-- col-sm-4 begins -->
+                    <div class="box same-height"> <!-- box same-height begins -->
+
+                        <div class="icon">
+                            <i class="fa fa-heart"></i>
+                        </div>
+
+                        <h3><a href="#">We love our customer</a></h3>
+                        <p>We love our customer</p>
+
+                    </div> <!-- box same-height ends -->
+                </div> <!-- col-sm-4 ends -->
+
+                <div class="col-sm-4"> <!-- col-sm-4 begins -->
+                    <div class="box same-height"> <!-- box same-height begins -->
+
+                        <div class="icon">
+                            <i class="fa fa-tag"></i>
+                        </div>
+
+                        <h3><a href="#">Best ever prices offered</a></h3>
+                        <p>We offer the best price</p>
+
+                    </div> <!-- box same-height ends -->
+                </div> <!-- col-sm-4 ends -->
+
+                <div class="col-sm-4"> <!-- col-sm-4 begins -->
+                    <div class="box same-height"> <!-- box same-height begins -->
+
+                        <div class="icon">
+                            <i class="fa fa-certificate"></i>
+                        </div>
+
+                        <h3><a href="#">100% organic products</a></h3>
+                        <p>We sell only organic products</p>
+
+                    </div> <!-- box same-height ends -->
+                </div> <!-- col-sm-4 ends -->
+
+            </div> <!-- same-height-row ends -->
+        </div> <!-- container ends -->
+    </div> <!-- advantages ends -->
+
 <script src="js/jquery-331.min.js"></script>
 <script src="js/bootstrap-337.min.js"></script>
 
