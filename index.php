@@ -51,7 +51,7 @@
             <div class="navbar-header"> <!-- navbar-header start -->
 
                 <a href="index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
-                    <img src="images/ecom-store-logo.png" alt="Organic Basket Logo" class="hidden-xs">
+                    <img src="images/Ob - logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
                     <img src="images/ecom-store-logo-mobile.png" alt="Organic Basket Logo" class="visible-xs">
                 </a> <!-- navbar-brand home finish -->
 
@@ -131,6 +131,53 @@
         </div> <!-- container finish -->
 
     </div> <!-- navbar finish -->
+
+    <div class="container" id="slider"> <!-- container SLIDER begins -->
+
+        <div class="col-md-12"> <!-- col-md-12 begins -->
+
+            <div class="carousel slide" id="myCarousel" data-ride="carousel"> <!-- carousel slide begins -->
+
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <div class="carousel-inner"> <!-- carousel-inner begins -->
+                    <div class="item active">
+                        <img src="admin_area/slides_images/Pure.jpg" alt="Slide Image 1">
+                    </div>
+
+                    <div class="item">
+                        <img src="admin_area/slides_images/Pure2.jpg" alt="Slide Image 2">
+                    </div>
+
+                    <div class="item">
+                        <img src="admin_area/slides_images/Pure3.jpg" alt="Slide Image 3">
+                    </div>
+
+                    <div class="item">
+                        <img src="admin_area/slides_images/Pure4.jpg" alt="Slide Image 4">
+                    </div>
+                </div> <!-- carousel-inner ends -->
+
+                <a href="#myCarousel" class="left carousel-control" data-slide="prev"> <!-- Slider Arrow -->
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a href="#myCarousel" class="right carousel-control" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a> <!-- Slider Arrow Ends -->
+
+            </div> <!-- carousel slide ends -->
+
+        </div> <!-- col-md-12 ends -->
+
+    </div> <!-- container SLIDER ends -->
 
 <script src="js/jquery-331.min.js"></script>
 <script src="js/bootstrap-337.min.js"></script>
