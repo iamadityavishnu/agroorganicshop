@@ -240,19 +240,19 @@
 
                             <div class="col-xs-4"> <!-- col-xs-4 begins -->
                                 <a href="#" class="thumb"> <!-- thumb begins -->
-                                    <img src="admin_area/product_images/product-thumbnail.jpg" alt="Product 1" class="img-responsive">
+                                    <img data-target="#myCarousel" data-slide-to="0" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Front" class="img-responsive">
                                 </a> <!-- thumb ends -->
                             </div> <!-- col-xs-4 ends -->
 
                             <div class="col-xs-4"> <!-- col-xs-4 begins -->
                                 <a href="#" class="thumb"> <!-- thumb begins -->
-                                    <img src="admin_area/product_images/product-thumbnail2.jpg" alt="Product 2" class="img-responsive">
+                                    <img data-target="#myCarousel" data-slide-to="1" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Side" class="img-responsive">
                                 </a> <!-- thumb ends -->
                             </div> <!-- col-xs-4 ends -->
 
                             <div class="col-xs-4"> <!-- col-xs-4 begins -->
                                 <a href="#" class="thumb"> <!-- thumb begins -->
-                                    <img src="admin_area/product_images/product-thumbnail4.jpg" alt="Product 3" class="img-responsive">
+                                    <img data-target="#myCarousel" data-slide-to="2" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Back" class="img-responsive">
                                 </a> <!-- thumb ends -->
                             </div> <!-- col-xs-4 ends -->
 
