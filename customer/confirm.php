@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organic Basket | Register</title>
+    <title>Organic Basket | My Account</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -25,16 +25,16 @@
             
                 <ul class="menu"> <!-- menu begin -->
                     <li>
-                        <a href="customer_register.php">Register</a>
+                        <a href="../customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="customer/my_account.php">My Account</a>
+                        <a href="my_account.php">My Account</a>
                     </li>
                     <li>
-                        <a href="cart.php">Go to Cart</a>
+                        <a href="../cart.php">Go to Cart</a>
                     </li>
                     <li>
-                        <a href="checkout.php">Login</a>
+                        <a href="../checkout.php">Login</a>
                     </li>
                 </ul> <!-- menu finish -->
 
@@ -50,7 +50,7 @@
 
             <div class="navbar-header"> <!-- navbar-header start -->
 
-                <a href="index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
+                <a href="../index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
                     <img src="images/Ob - logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
                     <img src="images/ecom-store-logo-mobile.png" alt="Organic Basket Logo" class="visible-xs">
                 </a> <!-- navbar-brand home finish -->
@@ -72,20 +72,20 @@
                 <div class="padding-nav"> <!-- padding-nav begin -->
 
                     <ul class="nav navbar-nav left"> <!-- nav navbar-nav left begin -->
+                        <li>
+                            <a href="../index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="../shop.php">Shop</a>
+                        </li>
                         <li class="active">
-                            <a href="index.php">Home</a>
+                            <a href="my_account.php">My Account</a>
                         </li>
                         <li>
-                            <a href="shop.php">Shop</a>
+                            <a href="../cart.php">Shopping Cart</a>
                         </li>
                         <li>
-                            <a href="customer/my_account.php">My Account</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">Shopping Cart</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact Us</a>
+                            <a href="../contact.php">Contact Us</a>
                         </li>
                     </ul> <!-- nav navbar-nav left finish -->
 
@@ -141,7 +141,7 @@
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        Register
+                        My Account
                     </li>
                 </ul> <!-- breadcrumb ends -->
 
@@ -156,54 +156,70 @@
             </div> <!-- col-md-3 ends -->
 
             <div class="col-md-9"> <!-- col-md-9 begins -->
-
-                <div class="box" style="background: #f7f7f7"> <!-- box begins --> <!-- i made a change here to be reviewed -->
+            
+                <div class="box"> <!-- box begins -->
                 
-                    <div class="box-header"> <!-- box-header begins -->
+                    <h1 align="center">Please confirm your payment</h1>
 
-                        <center> <!-- center begins -->
-                            <h2>Create a new account</h2>
-                        </center> <!-- center ends -->
-
-                        <form action="customer_register.php" method="post" enctype="multipart/form-data"> <!-- form begins -->
+                    <form action="confirm.php" method="post" enctype="multipart/form-data"> <!-- form begins -->
+                    
+                        <div class="form-group"> <!-- form-group begins -->
                         
-                            <div class="form-group"> <!-- form-group begins -->
-                            
-                                <label>Your Name</label>
-                                <input type="text" class="form-control" name="c_name" required>
-                            
-                            </div> <!-- form-group ends -->
-
-                            <div class="form-group"> <!-- form-group begins -->
-                            
-                                <label>Email</label>
-                                <input type="email" class="form-control" name="c_email" required>
-                            
-                            </div> <!-- form-group ends -->
-
-                            <div class="form-group"> <!-- form-group begins -->
-                            
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="c_pass" required>
-                            
-                            </div> <!-- form-group ends -->
-
-                            <div class="text-center"> <!-- text-center begins -->
-                            
-                                <button type="submit" name="register" class="btn btn-primary"> <!-- btn btn-primary begins -->
-                                
-                                    <i class="fa fa-user-plus"></i> Register
-                                
-                                </button> <!-- btn btn-primary ends -->
-
-                            </div> <!-- text-center ends -->
+                            <label>Invoice No</label>
+                            <input type="text" class="form-control" name="invoice_no" required>
                         
-                        </form> <!-- form ends -->
+                        </div> <!-- form-group ends -->
 
-                    </div> <!-- box-header ends -->
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label>Amount Sent</label>
+                            <input type="text" class="form-control" name="amount_sent" required>
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label>Payment Method</label>
+                            <select name="select_payment_mode" id="" class="form-control"> <!-- form-group begins -->
+                            
+                                <option>Select Payment Mode</option>
+                                <option>UPI</option>
+                                <option>Bank Transfer</option>
+                                <option>Net Banking</option>
+                                <option>Direct</option>
+                            
+                            </select> <!-- form-group ends -->
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label>Transaction/Reference ID</label>
+                            <input type="text" class="form-control" name="ref_no" required>
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label>Payment Date</label>
+                            <input type="date" class="form-control form-height-custom" name="date" required>
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="text-center"> <!-- text-center begins -->
+                        
+                            <button class="btn btn-primary btn-lg"> <!-- btn btn-primary btn-lg begins -->
+                            
+                                <i class="fa fa-user-md"></i> Confirm Payment
+                            
+                            </button> <!-- btn btn-primary btn-lg ends -->
+                        
+                        </div> <!-- text-center ends -->
+                    
+                    </form> <!-- form ends -->
 
                 </div> <!-- box ends -->
-
+            
             </div> <!-- col-md-9 ends -->
 
         </div> <!-- container ends -->
