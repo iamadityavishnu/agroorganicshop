@@ -1,0 +1,6 @@
+/* For Firefox only */
+@-moz-document url-prefix(){
+    .form-height-custom{
+        height: auto;
+    }
+}
