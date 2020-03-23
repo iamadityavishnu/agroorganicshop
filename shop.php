@@ -29,171 +29,123 @@ include("includes/header.php");
             </div> <!-- col-md-3 ends -->
 
             <div class="col-md-9"> <!-- col-md-9 begins -->
-                <div class="box"> <!-- box begins -->
+                
+                <?php
+                
+                if(!isset($_GET['p_cat'])){
 
-                    <h1>Shop</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatem, facilis.</p>
+                    if(!isset($_GET['cat'])){
 
-                </div> <!-- box ends -->
+                        echo "
+                    
+                            <div class='box'> <!-- box begins -->
+
+                                <h1>Shop</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatem, facilis.</p>
+
+                            </div> <!-- box ends -->
+
+                        ";
+
+                    }
+
+                }
+
+                ?>
 
                 <div class="row"> <!-- row begins -->
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                    <?php
+                
+                    if(!isset($_GET['p_cat'])){
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail2.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                        if(!isset($_GET['cat'])){
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail3.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                            $per_page = 6;
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail4.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                            if(isset($_GET['page'])){
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                                $page = $_GET['page'];
 
-                    <div class="col-md-4 col-sm-6 center-responsive"> <!-- col-md-4 col-sm-6 center-responsive begins -->
-                        <div class="product"> <!-- product begins -->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/product-thumbnail2.jpg" alt="Product Image">
-                            </a>
-                            <div class="text"> <!-- text begins -->
-                                <h3>
-                                    <a href="details.php">
-                                        Banana Chips
-                                    </a>
-                                </h3>
-                                <p class="price">Rs. 240</p>
-                                <p class="button">
-                                    <a href="details.php" class="btn btn-default">View Details</a>
-                                    <a href="details.php" class="btn btn-primary">
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-                                    </a>
-                                </p>
-                            </div> <!-- text ends -->
-                        </div> <!-- product ends -->
-                    </div> <!-- col-md-4 col-sm-6 center-responsive ends -->
+                                }
+                                else{
+
+                                    $page=1;
+
+                                $start_from = ($page-1) * $per_page;
+
+                                $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
+
+                                $run_products = mysqli_query($con,$get_products);
+
+                                while($row_products=mysqli_fetch_array($run_products)){
+
+                                    $pro_id = $row_products['product_id'];
+
+                                    $pro_title = $row_products['product_title'];
+
+                                    $pro_price = $row_products['product_price'];
+
+                                    $pro_img1 = $row_products['product_img1'];
+
+                                    echo "
+
+                                        <div class='col-md-4 col-sm-6 center-responsive'>
+                                        
+                                            <div class='product'>
+                                            
+                                                <a href='details.php?pro_id=$pro_id'>
+                                                
+                                                    <img class='img-responsive' src='admin_area/product_images/$pro_img1' alt='$pro_title thumbnail'>
+                                                
+                                                </a>
+
+                                                <div class='text'>
+                                                    <h3>
+                                                        <a href='details.php?pro_id=$pro_id'>$pro_title</a>
+                                                    </h3>
+                                                    <p class='price'>
+                                                        Rs. $pro_price
+                                                    </p>
+                                                    <p class='button'>
+
+                                                        <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                                                            View Details
+                                                        </a>
+
+                                                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                                                            <i class='fa fa-shopping-cart'></i> Add to Cart
+                                                        </a>
+
+                                                    </p>
+                                                </div>
+                                            
+                                            </div>
+                                        
+                                        </div>
+
+                                    ";
+
+                                }
+
+                            }
+
+                    ?>
 
                 </div> <!-- row ends -->
 
                 <center>
-                    <ul class="pagination">
-                        <li><a href="#">First Page</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">Last Page</a></li>
-                    </ul>
+                    <ul class="pagination"> <!-- pagination begins -->
+                        
+                       <?php
+                       
+                            }
+
+                        }
+
+                       ?>
+
+                    </ul> <!-- pagination ends -->
                 </center>
 
             </div> <!-- col-md-9 ends -->

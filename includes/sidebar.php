@@ -5,11 +5,13 @@
 
     <div class="panel-body"> <!-- panel-body begins -->
         <ul class="nav nav-pills nav-stacked category-menu"> <!-- nav nav-pills nav-stacked category-menu begins -->
-            <li><a href="#">Flour</a></li>
-            <li><a href="#">Packed Products</a></li>
-            <li><a href="#">Grow Bags</a></li>
-            <li><a href="#">Spices</a></li>
-            <li><a href="#">GoEarth</a></li>
+            
+            <?php
+
+                getPCats();
+
+            ?>
+
         </ul> <!-- nav nav-pills nav-stacked category-menu ends -->
     </div> <!-- panel-body ends -->
 
@@ -22,11 +24,13 @@
 
     <div class="panel-body"> <!-- panel-body begins -->
         <ul class="nav nav-pills nav-stacked category-menu"> <!-- nav nav-pills nav-stacked category-menu begins -->
-            <li><a href="#">Flour</a></li>
-            <li><a href="#">Packed Products</a></li>
-            <li><a href="#">Grow Bags</a></li>
-            <li><a href="#">Spices</a></li>
-            <li><a href="#">GoEarth</a></li>
+            
+            <?php
+
+                getCats();
+
+            ?>
+            
         </ul> <!-- nav nav-pills nav-stacked category-menu ends -->
     </div> <!-- panel-body ends -->
 
