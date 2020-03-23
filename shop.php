@@ -72,6 +72,8 @@ include("includes/header.php");
 
                                     $page=1;
 
+                                }
+
                                 $start_from = ($page-1) * $per_page;
 
                                 $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
@@ -128,8 +130,6 @@ include("includes/header.php");
 
                                 }
 
-                            }
-
                     ?>
 
                 </div> <!-- row ends -->
@@ -138,7 +138,38 @@ include("includes/header.php");
                     <ul class="pagination"> <!-- pagination begins -->
                         
                        <?php
-                       
+
+                        $query = "select * from products";
+                        $result = mysqli_query($con,$query);
+                        $total_records = mysqli_num_rows($result);
+                        $total_pages = ceil($total_records/$per_page);
+
+                        echo "
+                            <li>
+                            
+                                <a href='shop.php?page=1'>".'First Page'."</a>
+                            
+                            </li>
+                        ";
+
+                        for($i=1; $i<=$total_pages; $i++){
+                            echo "
+                                <li>
+                            
+                                    <a href='shop.php?page=".$i."'>".$i."</a>
+                            
+                                </li>
+                            ";
+                        };
+
+                        echo "
+                            <li>
+                            
+                                <a href='shop.php?page=$total_pages'>".'Last Page'."</a>
+                            
+                            </li>
+                        ";
+
                             }
 
                         }
@@ -147,6 +178,12 @@ include("includes/header.php");
 
                     </ul> <!-- pagination ends -->
                 </center>
+
+                <?php
+                
+                getpcatpro();
+                
+                ?>
 
             </div> <!-- col-md-9 ends -->
 
