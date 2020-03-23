@@ -6,10 +6,10 @@
                 <h4>Pages</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="../cart.php">Shopping Cart</a></li>
-                    <li><a href="../contact.php">Contact Us</a></li>
-                    <li><a href="../shop.php">Shop</a></li>
-                    <li><a href="my_account.php">My Account</a></li>
+                    <li><a href="cart.php">Shopping Cart</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="shop.php">Shop</a></li>
+                    <li><a href="customer/my_account.php">My Account</a></li>
                 </ul> <!-- ul ends -->
 
                 <hr>
@@ -17,8 +17,8 @@
                 <h4>User Selection</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="../checkout.php">Login</a></li>
-                    <li><a href="../customer_register.php">Register</a></li>
+                    <li><a href="checkout.php">Login</a></li>
+                    <li><a href="customer_register.php">Register</a></li>
                 </ul> <!-- ul ends -->
 
                 <hr class="hidden-md hidden-lg hidden-sm">
@@ -30,11 +30,33 @@
                 <h4>Top Categories</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="#">Grow Bags</a></li>
-                    <li><a href="#">Powdered Products</a></li>
-                    <li><a href="#">Packed Products</a></li>
-                    <li><a href="#">GoEarth</a></li>
-                    <li><a href="#">Flours</a></li>
+                    
+                    <?php
+                    
+                        $get_p_cats = "select * from product_categories";
+
+                        $run_p_cats = mysqli_query($con,$get_p_cats);
+
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                            
+                            $p_cat_id = $row_p_cats['p_cat_id'];
+
+                            $p_cat_title = $row_p_cats['p_cat_title'];
+
+                            echo "
+                            
+                                <li>
+
+                                    <a href='shop.php?p_cat=$p_cat_id'>$p_cat_title</a>
+
+                                </li>
+                            
+                            ";
+
+                        }
+
+                    ?>
+
                 </ul> <!-- ul ends -->
 
                 <hr class="hidden-md hidden-lg">
@@ -57,7 +79,7 @@
                 
                 </p> <!-- p ends -->
 
-                <a href="../contacts.php">Check our contact page</a>
+                <a href="contacts.php">Check our contact page</a>
 
                 <hr class="hidden-md hidden-lg">
             
@@ -73,16 +95,22 @@
                 
                 </p>
 
-                <form action="" method="post"> <!-- form begins -->
-                    <div class="input-group"> <!-- input-group begins -->
-                    
-                        <input type="email" placeholder="name@example.com" class="form-control" name="email">
-                        <span class="input-group-btn">
-                            <input type="submit" value="Subscribe" class="btn btn-default">
-                        </span>
-                    
-                    </div> <!-- input-group ends -->
-                </form> <!-- form ends -->
+                <!-- Begin Mailchimp Signup Form -->
+                
+                    <form action="https://agroorganicshop.us19.list-manage.com/subscribe/post?u=60326835e5529eefcf0434e04&amp;id=b83a8362cf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll" class="input-group">
+                            <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="Email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_60326835e5529eefcf0434e04_b83a8362cf" tabindex="-1" value="">
+                                </div>
+                            <span class="input-group-btn">
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default">
+                            </span>
+                        </div>
+                    </form>
+
+                <!-- Ending Mailchimp Signup Form -->
 
                 <hr>
 
