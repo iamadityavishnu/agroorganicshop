@@ -182,6 +182,7 @@ include("includes/header.php");
                 <?php
                 
                 getpcatpro();
+                getcatpro();
                 
                 ?>
 
