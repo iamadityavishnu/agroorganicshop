@@ -170,6 +170,42 @@
 
                         <div class="form-group"> <!-- form-group begins -->
                         
+                            <label class="col-md-3 control-label">Product Weight 1</label>
+
+                            <div class="col-md-6"> <!-- col-md-6 begins -->
+                            
+                                <input name="product_wt1" type="number" class="form-control" placeholder="Enter weight in grams" required>
+                            
+                            </div> <!-- col-md-6 ends -->
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label class="col-md-3 control-label">Product Weight 2</label>
+
+                            <div class="col-md-6"> <!-- col-md-6 begins -->
+                            
+                                <input name="product_wt2" type="number" class="form-control" placeholder="Enter weight in grams">
+                            
+                            </div> <!-- col-md-6 ends -->
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
+                            <label class="col-md-3 control-label">Product Weight 3</label>
+
+                            <div class="col-md-6"> <!-- col-md-6 begins -->
+                            
+                                <input name="product_wt3" type="number" class="form-control" placeholder="Enter weight in grams">
+                            
+                            </div> <!-- col-md-6 ends -->
+                        
+                        </div> <!-- form-group ends -->
+
+                        <div class="form-group"> <!-- form-group begins -->
+                        
                             <label class="col-md-3 control-label">Product Price</label>
 
                             <div class="col-md-6"> <!-- col-md-6 begins -->
@@ -246,6 +282,9 @@ if(isset($_POST['submit'])){
     $product_cat = $_POST['product_cat'];
     $cat = $_POST['cat'];
     $product_price = $_POST['product_price'];
+    $product_wt1 = $_POST['product_wt1'];
+    $product_wt2 = $_POST['product_wt2'];
+    $product_wt3 = $_POST['product_wt3'];
     $product_keywords = $_POST['product_keywords'];
     $product_desc = $_POST['product_desc'];
 
@@ -261,8 +300,8 @@ if(isset($_POST['submit'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-    $insert_product = "insert into products (p_cat_id, cat_id, date, product_title, product_img1, product_img2, product_img3, product_price, product_keywords, product_desc) values
-    ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
+    $insert_product = "insert into products (p_cat_id, cat_id, date, product_title, product_img1, product_img2, product_img3, product_wt1, product_wt2, product_wt3, product_price, product_keywords, product_desc) values
+    ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_wt1','$product_wt2','$product_wt3','$product_price','$product_keywords','$product_desc')";
 
     $run_product = mysqli_query($con,$insert_product);
 

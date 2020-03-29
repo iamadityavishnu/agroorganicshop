@@ -76,31 +76,50 @@ include("includes/header.php");
                         <div class="box"> <!-- box begins -->
                             <h1 class="text-center"><?php echo $pro_title; ?></h1>
 
-                            <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post"> <!-- form-horizontal begins -->
+                            <?php add_cart(); ?>
+
+                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"> <!-- form-horizontal begins -->
                                 <div class="form-group"> <!-- form begins -->
                                     <label for="" class="col-md-5 control-label">Product Quantity</label>
 
                                     <div class="col-md-7"> <!-- col-md-7 begins -->
-                                        <select name="product_qty" id="" class="form-control"> <!-- form-control begins -->
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select> <!-- form-control ends -->
+                                        <input type="number" name="product_qty" class="form-control" value="1">
                                     </div> <!-- col-md-7 ends -->
                                     
                                 </div> <!-- form-group ends -->
 
                                 <div class="form-group"> <!-- form-group begins -->
 
-                                    <label class="col-md-5 control-label">Product Size</label>
+                                    <label class="col-md-5 control-label">Product Weigth</label>
 
                                     <div class="col-md-7"> <!-- col-md-7 begins -->
-                                        <select name="product_size" id="" class="form-control"> <!-- form-control begins -->
-                                            <option value="">S</option>
-                                            <option value="">M</option>
-                                            <option value="">L</option>
+                                        <select name="product_wt" id="" class="form-control"> <!-- form-control begins -- product_size--> 
+                                            <option value="<?php echo $pro_wt1; ?>"><?php if($pro_wt1<1000){echo $pro_wt1; echo " Grams";}else{ echo $pro_wt1/1000; echo " Kg";} ?></option>
+                                            <?php if($pro_wt2!=0){
+                                                if($pro_wt2<1000){
+                                                    echo "
+                                                    <option value='$pro_wt2'>$pro_wt2 Grams</option>
+                                                    ";
+                                                }
+                                                else{
+                                                    echo "
+                                                        <option value='$pro_wt2'>$pro_wt2/1000 Kg</option>
+                                                    ";
+                                                }
+                                            }
+                                            if($pro_wt3!=0){
+                                                if($pro_wt3<1000){
+                                                    echo "
+                                                    <option value='$pro_wt3'>$pro_wt3 Grams</option>
+                                                    ";
+                                                }
+                                                else{
+                                                    echo "
+                                                        <option value='$pro_wt3'>$pro_wt3/1000 Kg</option>
+                                                    ";
+                                                }
+                                            }
+                                            ?>
                                         </select> <!-- form-control ends -->
                                     </div> <!-- col-md-7 ends -->
 
@@ -146,12 +165,46 @@ include("includes/header.php");
                     <h4>Product Details</h4>
                     <p> <?php echo $pro_desc; ?> </p>
 
-                    <h4>Size</h4>
-                    <ul>
+                    <h4>Weights Available</h4>
+
+                    <?php
+                        if($pro_wt1!=0){
+                            if($pro_wt1<1000){
+                                echo "
+                                <p>$pro_wt1 Grams</p>
+                                ";
+                            }
+                            else{
+                                printf("<p>%.1f Kilogram</p>",$pro_wt1/1000);
+                            }
+                        }
+                        if($pro_wt2!=0){
+                            if($pro_wt2<1000){
+                                echo "
+                                <p>$pro_wt2 Grams</p>
+                                ";
+                            }
+                            else{
+                                printf("<p>%.1f Kilogram</p>",$pro_wt2/1000);
+                            }
+                        }
+                        if($pro_wt3!=0){
+                            if($pro_wt3<1000){
+                                echo "
+                                <p>$pro_wt3 Grams</p>
+                                ";
+                            }
+                            else{
+                                printf("<p>%.1f Kilogram</p>",$pro_wt3/1000);
+                            }
+                        }
+                    ?>
+
+                    <!-- <ul>
                         <li>Small</li>
                         <li>Medium</li>
                         <li>Large</li>
-                    </ul>
+                    </ul> -->
 
                     <hr>
 
@@ -165,7 +218,7 @@ include("includes/header.php");
                     </div> <!-- col-md-3 col-sm-6 ends -->
 
                     <?php
-                        $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+                        $get_products = "select * from products order by rand() LIMIT 0,3";
                         $run_products = mysqli_query($db,$get_products);
                         while($row_products=mysqli_fetch_array($run_products)){
                             $pro_id = $row_products['product_id'];
