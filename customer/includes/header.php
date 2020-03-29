@@ -1,5 +1,6 @@
 <?php 
 include('includes/dbconnect.php');
+include('functions/functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ include('includes/dbconnect.php');
             <div class="col-md-6 offer"> <!-- col-md-6 offer begin -->
 
                 <a href="#" class="btn btn-success btn-sm">Welcome</a>
-                <a href="checkout.php">4 Items In Your Cart | Total Price: $300</a>
+                <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?></a>
 
             </div> <!-- end of col-md-6 offer -->
 
