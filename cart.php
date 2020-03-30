@@ -222,6 +222,10 @@ include("includes/header.php");
                                 <tr> <!-- tr begins -->
                                     <td>Shipping and handling</td>
                                     <td>Rs. 80</td>
+                                    <?php
+                                    $shipping_fee = 0;
+                                    //to do
+                                    ?>
                                 </tr> <!-- tr ends -->
 
                                 <tr> <!-- tr begins -->
