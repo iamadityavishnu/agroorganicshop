@@ -6,10 +6,10 @@
                 <h4>Pages</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="cart.php">Shopping Cart</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a href="customer/my_account.php">My Account</a></li>
+                    <li><a href="../cart.php">Shopping Cart</a></li>
+                    <li><a href="../contact.php">Contact Us</a></li>
+                    <li><a href="../shop.php">Shop</a></li>
+                    <li><a href="my_account.php">My Account</a></li>
                 </ul> <!-- ul ends -->
 
                 <hr>
@@ -17,8 +17,24 @@
                 <h4>User Selection</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="checkout.php">Login</a></li>
-                    <li><a href="customer_register.php">Register</a></li>
+                    <li>
+                        <?php
+                            if(!isset($_SESSION['customer_email'])){
+                                echo "<a href='../checkout.php'>My Account</a>";
+                            }else{
+                                echo "<a href='my_account.php?my_orders'>My Account</a>";
+                            }
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                            if(!isset($_SESSION['customer_email'])){
+                                echo "<a href='../checkout.php'>My Account</a>";
+                            }else{
+                                echo "<a href='my_account.php?edit_account'>Edit Account</a>";
+                            }
+                        ?>
+                    </li>
                 </ul> <!-- ul ends -->
 
                 <hr class="hidden-md hidden-lg hidden-sm">
@@ -47,7 +63,7 @@
                             
                                 <li>
 
-                                    <a href='shop.php?p_cat=$p_cat_id'>$p_cat_title</a>
+                                    <a href='../shop.php?p_cat=$p_cat_id'>$p_cat_title</a>
 
                                 </li>
                             
@@ -79,7 +95,7 @@
                 
                 </p> <!-- p ends -->
 
-                <a href="contacts.php">Check our contact page</a>
+                <a href="../contacts.php">Check our contact page</a>
 
                 <hr class="hidden-md hidden-lg">
             
@@ -134,7 +150,7 @@
         <div class="col-md-6"> <!-- col-md-6 begins -->
             <p class="pull-left">
 
-                &copy; 2020 OrganicBasket. All rights reserved
+                &copy; <?php $date_array = getdate(); echo $date_array['year']; ?> OrganicBasket. All rights reserved
 
             </p>
         </div> <!-- col-md-6 ends -->

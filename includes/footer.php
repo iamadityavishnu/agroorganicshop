@@ -17,7 +17,15 @@
                 <h4>User Selection</h4>
 
                 <ul> <!-- ul begins -->
-                    <li><a href="checkout.php">Login</a></li>
+                    <li>
+                        <?php
+                            if(!isset($_SESSION['customer_email'])){
+                                echo "<a href='checkout.php'>Login</a>";
+                            }else{
+                                echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+                            }
+                        ?>
+                    </li>
                     <li><a href="customer_register.php">Register</a></li>
                 </ul> <!-- ul ends -->
 
@@ -134,7 +142,7 @@
         <div class="col-md-6"> <!-- col-md-6 begins -->
             <p class="pull-left">
 
-                &copy; 2020 OrganicBasket. All rights reserved
+                &copy; <?php $date_array = getdate(); echo $date_array['year']; ?> OrganicBasket. All rights reserved
 
             </p>
         </div> <!-- col-md-6 ends -->

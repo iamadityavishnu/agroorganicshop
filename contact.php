@@ -8,8 +8,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
-//$mail = PHPMailer()
-
 //PHP Mailer Ends
 
 ?>
@@ -100,45 +98,45 @@ require 'vendor/autoload.php';
                             $sender_message = $_POST['message'];
                             $receiver_email = "adityavishnu3610@gmail.com";
 
-                        $mail = new PHPMailer(); // create a new object
-                        $mail->isSMTP(); // enable SMTP
-                        $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-                        $mail->SMTPAuth = true; // authentication enabled
-                        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-                        $mail->Host = "smtp.gmail.com";
-                        $mail->Port = 465; // or 587
-                        $mail->IsHTML(true);
-                        $mail->Username = "karimpilrajan@gmail.com";
-                        $mail->Password = "karimpilrajan";
-                        $mail->addReplyTo($sender_email, $sender_name);
-                        $mail->setFrom($sender_email,$sender_name);
-                        $mail->Subject = $sender_subject;
-                        $mail->Body = $sender_message;
-                        
-                        $mail->AddAddress($receiver_email,'Admin Organic Basket');
-                        $mail->Send();
+                            $mail = new PHPMailer(); // create a new object
+                            $mail->isSMTP(); // enable SMTP
+                            $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+                            $mail->SMTPAuth = true; // authentication enabled
+                            $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+                            $mail->Host = "smtp.gmail.com";
+                            $mail->Port = 465; // or 587
+                            $mail->IsHTML(true);
+                            $mail->Username = "karimpilrajan@gmail.com";
+                            $mail->Password = "karimpilrajan";
+                            $mail->addReplyTo($sender_email, $sender_name);
+                            $mail->setFrom($sender_email,$sender_name);
+                            $mail->Subject = $sender_subject;
+                            $mail->Body = $sender_message;
+                            
+                            $mail->AddAddress($receiver_email,'Admin Organic Basket');
+                            $mail->Send();
 
-                        //Auto reply part
-                        $auto_reply = new PHPMailer(); // create a new object
-                        $auto_reply->IsSMTP(); // enable SMTP
-                        $auto_reply->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-                        $auto_reply->SMTPAuth = true; // authentication enabled
-                        $auto_reply->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-                        $auto_reply->Host = "smtp.gmail.com";
-                        $auto_reply->Port = 465; // or 587
-                        $auto_reply->IsHTML(true);
+                            //Auto reply part
+                            $auto_reply = new PHPMailer(); // create a new object
+                            $auto_reply->IsSMTP(); // enable SMTP
+                            $auto_reply->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+                            $auto_reply->SMTPAuth = true; // authentication enabled
+                            $auto_reply->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+                            $auto_reply->Host = "smtp.gmail.com";
+                            $auto_reply->Port = 465; // or 587
+                            $auto_reply->IsHTML(true);
 
-                        $auto_reply->Username = "karimpilrajan@gmail.com";
-                        $auto_reply->Password = "karimpilrajan";
-                        $auto_reply->SetFrom($receiver_email);
-                        $auto_reply->Subject = 'Your email has been recieved';
-                        $auto_reply->Body = 'Thank you for contacting us. We typically reply within 2 business days.';
-                        
-                        $auto_reply->AddAddress($sender_email);
-                        // $mail->AddAddress("4566@mbcpeermade.com");
-                        $auto_reply->Send();
+                            $auto_reply->Username = "karimpilrajan@gmail.com";
+                            $auto_reply->Password = "karimpilrajan";
+                            $auto_reply->SetFrom($receiver_email);
+                            $auto_reply->Subject = 'Your email has been recieved';
+                            $auto_reply->Body = 'Thank you for contacting us. We typically reply within 2 business days.';
+                            
+                            $auto_reply->AddAddress($sender_email);
+                            // $mail->AddAddress("4566@mbcpeermade.com");
+                            $auto_reply->Send();
 
-                        echo "<h2 align='center'>Your message was succesfully sent</h2>";
+                            echo "<h2 align='center'>Your message was succesfully sent</h2>";
 
                         }
                         ?>

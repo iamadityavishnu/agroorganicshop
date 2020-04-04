@@ -1,36 +1,38 @@
-<h1 align="center">Change Password</h1>
+<div class="box"> <!-- box begins --> 
+    <h1 align="center">Change Password</h1>
 
-<form action="" method="post"> <!-- from begins -->
+    <form action="" method="post"> <!-- from begins -->
 
-    <div class="form-group"> <!-- form-group begins -->
+        <div class="form-group"> <!-- form-group begins -->
 
-        <label>Old Password</label>
-        <input type="password" name="old_pass" class="form-control" required>
+            <label>Old Password</label>
+            <input type="password" name="old_pass" class="form-control" required>
 
-    </div> <!-- form-group ends -->
+        </div> <!-- form-group ends -->
 
-    <div class="form-group"> <!-- form-group begins -->
+        <div class="form-group"> <!-- form-group begins -->
 
-        <label>New Password</label>
-        <input type="password" name="new_pass" class="form-control" required>
+            <label>New Password</label>
+            <input type="password" name="new_pass" class="form-control" required>
 
-    </div> <!-- form-group ends -->
+        </div> <!-- form-group ends -->
 
-    <div class="form-group"> <!-- form-group begins -->
+        <div class="form-group"> <!-- form-group begins -->
 
-        <label>Confirm Password</label>
-        <input type="password" name="new_pass_again" class="form-control" required>
+            <label>Confirm Password</label>
+            <input type="password" name="new_pass_again" class="form-control" required>
 
-    </div> <!-- form-group ends -->
+        </div> <!-- form-group ends -->
 
-    <div class="text-center"> <!-- text-center begins -->
+        <div class="text-center"> <!-- text-center begins -->
 
-        <button type="submit" name="submit" class="btn btn-primary"> <!-- btn btn-primary begins -->
+            <button type="submit" name="submit" class="btn btn-primary"> <!-- btn btn-primary begins -->
 
-            <i class="fa fa-user-md"></i> Update Password
+                <i class="fa fa-user-md"></i> Update Password
 
-        </button> <!-- btn btn-primary ends -->
+            </button> <!-- btn btn-primary ends -->
 
-    </div> <!-- text-center ends -->
+        </div> <!-- text-center ends -->
 
-</form> <!-- from ends -->
+    </form> <!-- from ends -->
+</div> <!-- box ends -->

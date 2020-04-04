@@ -1,39 +1,41 @@
-<center> <!-- center begins -->
+<div class="box"> <!-- box begins --> 
+    <center> <!-- center begins -->
 
-    <h1>Pay offline method</h1>
+        <h1>Pay offline method</h1>
 
-    <p class="text-muted">
-        Feel free to <a href="../contact.php">contact us</a> 24/7 in case of any queries. 
-    </p>
+        <p class="text-muted">
+            Feel free to <a href="../contact.php">contact us</a> 24/7 in case of any queries. 
+        </p>
 
-</center> <!-- center ends -->
+    </center> <!-- center ends -->
 
-<hr>
+    <hr>
 
-<div class="table-responsive"> <!-- table-responsive begins -->
+    <div class="table-responsive"> <!-- table-responsive begins -->
 
-    <table class="table table-bordered table-hover table-striped"> <!-- table table-bordered table-hover begins -->
-    
-        <thead> <!-- thead begins -->
+        <table class="table table-bordered table-hover table-striped"> <!-- table table-bordered table-hover begins -->
         
-            <tr> <!-- tr begins -->
+            <thead> <!-- thead begins -->
+            
+                <tr> <!-- tr begins -->
 
-                <th>Bank Account</th>
-                <th>UPI</th>
-                <th>Others</th>
+                    <th>Bank Account</th>
+                    <th>UPI</th>
+                    <th>Others</th>
 
-            </tr> <!-- tr ends -->
+                </tr> <!-- tr ends -->
 
-        </thead> <!-- thead ends -->
+            </thead> <!-- thead ends -->
 
-        <tbody> <!-- tbody begins -->
-        
-            <td>Bank name: BLA | Account No: BLABLA | IFSC: BLA BLA</td>
-            <td>cash@upi</td>
-            <td>Call and ask</td>
-        
-        </tbody> <!-- tbody ends -->
+            <tbody> <!-- tbody begins -->
+            
+                <td>Bank name: BLA | Account No: BLABLA | IFSC: BLA BLA</td>
+                <td>cash@upi</td>
+                <td>Call and ask</td>
+            
+            </tbody> <!-- tbody ends -->
 
-    </table> <!-- table table-bordered table-hover ends -->
+        </table> <!-- table table-bordered table-hover ends -->
 
-</div> <!-- table-responsive ends -->
+    </div> <!-- table-responsive ends -->
+</div> <!-- box ends -->
