@@ -364,6 +364,36 @@ body{
     }
 }
 
+/* MY ACCOUNT PART */
+
+.my-account-img img{
+    width: 300px;
+}
+
+
+/* Side Bar */
+.edit-profile-pic{
+    background: rgb(255, 255, 255);
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: -15px;
+    right: -105px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.edit-profile-pic i{
+    color: rgb(99, 99, 99);
+}
+.center-cropped {
+    width: 220px;
+    height: 240px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 
 
 

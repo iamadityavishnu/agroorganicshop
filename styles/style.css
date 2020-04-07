@@ -20,7 +20,7 @@ body::before {
     z-index: 100;
 }
 
-body::after {
+/* body::after {
     content: "";
     position: fixed;
     bottom: -10px;
@@ -29,7 +29,7 @@ body::after {
     height: 10px;
     box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
     z-index: 100;
-}
+} */
 /*Top shadow and Botton shadow */
 
 body{
@@ -387,6 +387,8 @@ body{
         height: auto;
     }
 }
+
+
 
 
 

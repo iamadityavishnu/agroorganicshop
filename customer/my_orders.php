@@ -21,87 +21,57 @@
             
                 <tr> <!-- tr begins -->
 
-                    <th>Sl no </th>
-                    <th>Due amount </th>
-                    <th>Invoice no </th>
+                    <th>Invoice No </th>
+                    <th>Product </th>
                     <th>Qty </th>
-                    <th>Size </th>
-                    <th>Order date </th>
-                    <th>Paid/unpaid </th>
-                    <th>Status </th>
+                    <th>Weight </th>
+                    <th>Amount Paid </th>
+                    <th>Order Date </th>
+                    <th>Order Status </th>
 
                 </tr> <!-- tr ends -->
 
             </thead> <!-- thead ends -->
 
-            <tbody> <!-- tbody begins -->
+            <?php
+
+            $customer_id = $_SESSION['customer_id'];
+
+            $select_orders = "select * from customer_orders WHERE customer_id=$customer_id";
+            $run_orders = mysqli_query($con,$select_orders);
+            
+            while($row_orders = mysqli_fetch_array($run_orders)){
+
+                $due_amount = $row_orders['due_amount'];
+                $invoice_no = $row_orders['invoice_no'];
+                $qty = $row_orders['qty'];
+                $weight = $row_orders['weight'];
+                $order_date = $row_orders['order_date'];
+                $status = ucfirst($row_orders['order_status']);
+                $p_id = $row_orders['product_id'];
+                $p_title = $row_orders['product_title'];
+                $p_img = $row_orders['product_thumbnail'];
+                
+                echo "<tbody> <!-- tbody begins -->
             
                 <tr> <!-- tr begins -->
 
-                    <th>#1</th>
-
-                    <td>Rs. 80</td>
-                    <td>763768</td>
-                    <td>2</td>
-                    <td>Small</td>
-                    <td>21-03-2020</td>
-                    <td>Unpaid</td>
-                    
-                    <td>
-                    
-                        <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm">Confirm Paid</a>
-                    
-                    </td>
+                    <td>$invoice_no</td>
+                    <td><a href='../details.php?pro_id=$p_id'><img src='../admin_area/product_images/$p_img' height='40px' width='40px'> $p_title</a></td>
+                    <td>$qty</td>
+                    <td>$weight</td>
+                    <td>$due_amount</td>
+                    <td>$order_date</td>
+                    <td>$status</td>
 
                 </tr> <!-- tr ends -->
             
             </tbody> <!-- tbody ends -->
+            ";
 
-            <tbody> <!-- tbody begins -->
-            
-                <tr> <!-- tr begins -->
+            }
 
-                    <th>#2</th>
-
-                    <td>Rs. 80</td>
-                    <td>763728</td>
-                    <td>2</td>
-                    <td>Small</td>
-                    <td>21-03-2020</td>
-                    <td>Unpaid</td>
-                    
-                    <td>
-                    
-                        <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm">Confirm Paid</a>
-                    
-                    </td>
-
-                </tr> <!-- tr ends -->
-            
-            </tbody> <!-- tbody ends -->
-
-            <tbody> <!-- tbody begins -->
-            
-                <tr> <!-- tr begins -->
-
-                    <th>#1</th>
-
-                    <td>Rs. 80</td>
-                    <td>763768</td>
-                    <td>2</td>
-                    <td>Small</td>
-                    <td>21-03-2020</td>
-                    <td>Unpaid</td>
-                    
-                    <td>
-                    
-                        <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm">Confirm Paid</a>
-                    
-                    </td>
-
-                </tr> <!-- tr ends -->
-            
-            </tbody> <!-- tbody ends -->
+            ?>
 
         </table> <!-- table table-bordered table-hover ends -->
 

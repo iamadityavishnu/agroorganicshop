@@ -11,7 +11,9 @@
         $customer_state = $row_customer['customer_state'];
         $customer_city = $row_customer['customer_city'];
         $customer_contact = $row_customer['customer_contact'];
-        $customer_address = $row_customer['customer_address'];
+        $customer_address_1 = $row_customer['customer_address_1'];
+        $customer_address_2 = $row_customer['customer_address_2'];
+        $customer_pincode = $row_customer['customer_pincode'];
 
     }
 ?>
@@ -46,8 +48,15 @@
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Address</label>
-            <input type="text" name="c_address" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_address;} ?>" required>
+            <label>Address Line 1</label>
+            <input type="text" name="c_address_1" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_address_1;} ?>" required>
+
+        </div> <!-- form-group ends -->
+
+        <div class="form-group"> <!-- form-group begins -->
+
+            <label>Address Line 2</label>
+            <input type="text" name="c_address_2" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_address_2;} ?>" required>
 
         </div> <!-- form-group ends -->
 
@@ -65,13 +74,12 @@
 
         </div> <!-- form-group ends -->
 
-        <!-- <div class="form-group"> --> <!-- form-group begins -->
+        <div class="form-group"> <!-- form-group begins -->
 
-            <!-- <label>Profile Picture</label>
-            <input type="file" name="c_image" class="form-control form-height-custom" required>
-            <img class="img-responsive" src="customer_images/IMG_8426.png" width="50px" alt="Profile picture"> -->
+            <label>Postal Code</label>
+            <input type="number" name="c_pincode" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_pincode;} ?>" required>
 
-        <!-- </div> --> <!-- form-group ends -->
+        </div> <!-- form-group ends -->
 
         <div class="text-center"> <!-- text-center begins -->
 
@@ -92,9 +100,11 @@
         $c_name = $_POST['c_name'];
         $c_email = $_POST['c_email'];
         $c_phone = $_POST['c_phone'];
-        $c_address = $_POST['c_address'];
+        $c_add_1 = $_POST['c_address_1'];
+        $c_add_2 = $_POST['c_address_2'];
         $c_city = $_POST['c_city'];
         $c_state = $_POST['c_state'];
+        $c_pincode = $_POST['c_pincode'];
 
         $update_customer = "update customers
         set customer_name='$c_name',
@@ -102,7 +112,9 @@
         customer_state='$c_state',
         customer_city='$c_city',
         customer_contact='$c_phone',
-        customer_address='$c_address'
+        customer_address_1='$c_add_1',
+        customer_address_2='$c_add_2',
+        customer_pincode='$c_pincode'
         WHERE customer_id='$customer_id'";
 
         $run_update_customer = mysqli_query($con,$update_customer);

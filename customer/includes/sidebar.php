@@ -1,20 +1,38 @@
+<?php
+    if(isset($_SESSION['customer_email'])){
+        $customer_email = $_SESSION['customer_email'];
+        $select_customer = "select * from customers where customer_email='$customer_email'";
+        $run_customer = mysqli_query($con,$select_customer);
+        $row_customer = mysqli_fetch_array($run_customer);
+
+        $customer_id = $row_customer['customer_id'];
+        $customer_name = $row_customer['customer_name'];
+        $customer_image = $row_customer['customer_image'];
+    }
+?>
+
 <div class="panel panel-default sidebar-menu"> <!-- panel panel-default sidebar-menu begins -->
 
     <div class="panel-heading"> <!-- panel-heading begins -->
     
         <center> <!-- center begins -->
 
-            <img src="customer_images/IMG_8426.png" alt="Aditya Profile" height="200px">
+            <div class="center-cropped" style="background-image: url('customer_images/<?php echo $customer_image; ?>');">
+            <!-- PROFILE PICTURE PART -->  
+            </div>
+            <a href="my_account.php?edit_image">
+                <div class="edit-profile-pic" data-toggle="tooltip" title="Edit Profile Picture"><i class="fa fa-camera"></i></div>
+            </a>
         
         </center> <!-- center ends -->
 
         <br>
 
-        <h3 align="center" class="panel-title"> <!-- panel-title begins -->
+        <h3 align="center" class="panel-heading"> <!-- panel-heading begins --> <!-- class="panel-title" -->
         
-            Aditya Vishnu
+            <?php echo $customer_name; ?>
         
-        </h3> <!-- panel-title ends -->
+        </h3> <!-- panel-heading ends -->
     
     </div> <!-- panel-heading ends -->
 
