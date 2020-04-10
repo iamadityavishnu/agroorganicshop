@@ -17,9 +17,22 @@
     
         <center> <!-- center begins -->
 
-            <div class="center-cropped" style="background-image: url('customer_images/<?php echo $customer_image; ?>');">
-            <!-- PROFILE PICTURE PART -->  
-            </div>
+            <?php
+                if(empty($row_customer['customer_image'])){
+                    ?>
+                    <div class="center-cropped" style="background-image: url('https://source.unsplash.com/collection/3388465');">
+                    <!-- RANDOM PROFILE PICTURE PART -->  
+                    </div>
+                    <?
+                }else{
+                    ?>
+                    <div class="center-cropped" style="background-image: url('customer_images/<? echo $customer_image; ?>');">
+                    <!-- PROFILE PICTURE PART -->  
+                    </div>
+                    <?
+                }
+            ?>
+
             <a href="my_account.php?edit_image">
                 <div class="edit-profile-pic" data-toggle="tooltip" title="Edit Profile Picture"><i class="fa fa-camera"></i></div>
             </a>

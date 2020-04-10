@@ -51,16 +51,17 @@
                 $p_id = $row_orders['product_id'];
                 $p_title = $row_orders['product_title'];
                 $p_img = $row_orders['product_thumbnail'];
+
+                if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
                 
                 echo "<tbody> <!-- tbody begins -->
             
                 <tr> <!-- tr begins -->
-
                     <td>$invoice_no</td>
                     <td><a href='../details.php?pro_id=$p_id'><img src='../admin_area/product_images/$p_img' height='40px' width='40px'> $p_title</a></td>
                     <td>$qty</td>
-                    <td>$weight</td>
-                    <td>$due_amount</td>
+                    <td>$weight $weight_unit</td>
+                    <td>&#8377; $due_amount</td>
                     <td>$order_date</td>
                     <td>$status</td>
 

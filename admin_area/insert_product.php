@@ -1,6 +1,6 @@
 <?php include('includes/dbconnect.php'); ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
 </head>
-<body>
+<body> -->
 
     <div class="row"> <!-- row begins -->
     
@@ -270,8 +270,8 @@
 <script src="js/tinymce/tinymce.min.js"></script>
 <script> tinymce.init({ selector:'textarea' }); </script>
 
-</body>
-</html>
+<!-- </body>
+</html> -->
 
 
 <?php
