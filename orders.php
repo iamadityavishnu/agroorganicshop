@@ -37,8 +37,8 @@ while($row_cart = mysqli_fetch_array($run_cart)){
         values('$customer_id','$product_id','$product_title','$product_thumb','$sub_total','$invoice_no','$pro_qty','$pro_weight',NOW(),'$status')";
         $run_customer_order = mysqli_query($con,$insert_customer_order);
         
-        $insert_pending_order = "insert into pending_orders (customer_id, invoice_no, product_id, qty, weight, order_status)
-        values('$customer_id','$invoice_no','$pro_id','$pro_qty','$pro_weight','$status')";
+        $insert_pending_order = "insert into pending_orders (customer_id, invoice_no, product_id, product_title, amount_paid, date_of_purchase, qty, weight, order_status)
+        values('$customer_id','$invoice_no','$pro_id','$product_title','$sub_total',NOW(),'$pro_qty','$pro_weight','$status')";
 
         $run_pending_order = mysqli_query($con,$insert_pending_order);
 

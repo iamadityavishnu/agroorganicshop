@@ -21,3 +21,10 @@
 .form-box:nth-of-type(even){
     background: #e0e0e0;
 }
+
+td{
+    color: #110168;
+}
+th{
+    color: #0d0053;
+}

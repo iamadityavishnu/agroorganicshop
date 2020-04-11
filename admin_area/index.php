@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>Admin Panel - Organic Basket</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/gentelella/1.3.0/css/custom.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="css/index-style.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/gentelella/1.3.0/css/custom.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="css/index-style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="index.html" class="site_title"><i class="fa fa-dashboard"></i> <span>Admin</span></a>
+          <a href="index.php" class="site_title"><i class="fa fa-dashboard"></i> <span>Admin</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -44,15 +44,15 @@
             <ul class="nav side-menu">
               <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                  <li><a href="index.html">Dashboard</a></li>
+                  <li><a href="index.php">Dashboard</a></li>
                   <li><a href="index2.html">Dashboard2</a></li>
                   <li><a href="index3.html">Dashboard3</a></li>
                 </ul>
               </li>
               <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
+                  <li><a href="index.php?insert_products">Insert Products</a></li>
                   <li><a href="index.php?update_slider">Update Slider</a></li>
-                  <li><a href="form_advanced.html">Advanced Components</a></li>
                   <li><a href="form_validation.html">Form Validation</a></li>
                   <li><a href="form_wizards.html">Form Wizard</a></li>
                   <li><a href="form_upload.html">Form Upload</a></li>
@@ -260,10 +260,12 @@
     <!-- page content -->
     <div class="right_col" role="main">
       <?php
-        if(empty($_GET)){
-          include("insert_product.php");
+        if(empty($_GET) or isset($_GET['page'])){
+          include("new_orders.php");
         }elseif (isset($_GET['update_slider'])) {
           include("slider_update.php");
+        }elseif(isset($_GET['insert_products'])) {
+          include("insert_product.php");
         }
       ?>
     </div>

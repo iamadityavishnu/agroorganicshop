@@ -140,7 +140,7 @@ if(isset($_GET['pro_id'])){
 
                 </div> <!-- padding-nav finish -->
 
-                <a href="cart.php" class="btn navbar-btn btn-primary right"> <!-- btn navbar-btn btn-primary right begin -->
+                <a href="../cart.php" class="btn navbar-btn btn-primary right"> <!-- btn navbar-btn btn-primary right begin -->
                 
                     <i class="fa fa-shopping-cart"></i>
                     <span><?php items(); ?> Items in your cart</span>

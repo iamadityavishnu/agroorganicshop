@@ -30,11 +30,15 @@ include("includes/header.php");
 
                         $slide_name = $row_slides['slide_name'];
                         $slide_image = $row_slides['slide_image'];
+                        $slide_link = $row_slides['slide_link'];
+                        $slide_alt = $row_slides['slide_alt'];
 
                         echo "
                         
                           <div class='item active'>
-                          <img src='admin_area/slides_images/$slide_image'>
+                          <a href='//$slide_link'>
+                          <img src='admin_area/slides_images/$slide_image' alt='$slide_alt'>
+                          </a>
                           </div>
                         
                         ";
@@ -49,11 +53,15 @@ include("includes/header.php");
 
                         $slide_name = $row_slides['slide_name'];
                         $slide_image = $row_slides['slide_image'];
+                        $slide_link = $row_slides['slide_link'];
+                        $slide_alt = $row_slides['slide_alt'];
 
                         echo "
                         
                           <div class='item'>
-                          <img src='admin_area/slides_images/$slide_image'>
+                          <a href='//$slide_link'>
+                          <img src='admin_area/slides_images/$slide_image' alt='$slide_alt'>
+                          </a>
                           </div>
                         
                         ";

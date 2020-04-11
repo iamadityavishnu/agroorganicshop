@@ -300,6 +300,34 @@ if(isset($_POST['submit'])){
         }
     }
 
+    if(isset($_POST['slider_img1_link'])){
+        $slide_link = $_POST['slider_img1_link'];
+        $slide_alt = $_POST['slider_img1_alt'];
+        $insert_link_alt = "update slider set slide_link='$slide_link', slide_alt='$slide_alt' WHERE slide_id=1";
+        $run_link_alt = mysqli_query($con,$insert_link_alt);
+    }
+
+    if(isset($_POST['slider_img2_link'])){
+        $slide_link = $_POST['slider_img2_link'];
+        $slide_alt = $_POST['slider_img2_alt'];
+        $insert_link_alt = "update slider set slide_link='$slide_link', slide_alt='$slide_alt' WHERE slide_id=2";
+        $run_link_alt = mysqli_query($con,$insert_link_alt);
+    }
+
+    if(isset($_POST['slider_img3_link'])){
+        $slide_link = $_POST['slider_img3_link'];
+        $slide_alt = $_POST['slider_img3_alt'];
+        $insert_link_alt = "update slider set slide_link='$slide_link', slide_alt='$slide_alt' WHERE slide_id=3";
+        $run_link_alt = mysqli_query($con,$insert_link_alt);
+    }
+
+    if(isset($_POST['slider_img4_link'])){
+        $slide_link = $_POST['slider_img4_link'];
+        $slide_alt = $_POST['slider_img4_alt'];
+        $insert_link_alt = "update slider set slide_link='$slide_link', slide_alt='$slide_alt' WHERE slide_id=4";
+        $run_link_alt = mysqli_query($con,$insert_link_alt);
+    }
+
 }
 
 ?>
