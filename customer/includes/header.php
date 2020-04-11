@@ -65,9 +65,15 @@ if(isset($_GET['pro_id'])){
             <div class="col-md-6"> <!-- col-md-6 begin -->
             
                 <ul class="menu"> <!-- menu begin -->
-                    <li>
-                        <a href="../customer_register.php">Register</a>
-                    </li>
+                    <?php
+                    if(!isset($_SESSION['customer_email'])){
+                        echo "
+                        <li>
+                            <a href='../customer_register.php'>Register</a>
+                        </li>
+                        ";
+                    }
+                    ?>
                     <li>
                         <a href="my_account.php">My Account</a>
                     </li>

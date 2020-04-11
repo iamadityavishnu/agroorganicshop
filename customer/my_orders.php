@@ -35,7 +35,12 @@
 
             <?php
 
-            $customer_id = $_SESSION['customer_id'];
+            $customer_email = $_SESSION['customer_email'];
+
+            $select_customer = "select * from customers WHERE customer_email='$customer_email'";
+            $run_customers = mysqli_query($con,$select_customer);
+            $row_customers = mysqli_fetch_array($run_customers);
+            $customer_id = $row_customers['customer_id'];
 
             $select_orders = "select * from customer_orders WHERE customer_id=$customer_id";
             $run_orders = mysqli_query($con,$select_orders);

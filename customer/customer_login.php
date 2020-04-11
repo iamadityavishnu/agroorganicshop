@@ -61,13 +61,13 @@ if(isset($_POST['login'])){
         exit();
     }
     if($check_customer==1 AND $check_cart==0){
-        $_SESSION['customer_email'] = $customer_email;
+        $_SESSION['customer_email'] = $row_customer['customer_email'];
         $_SESSION['customer_name'] = $row_customer['customer_name'];
         $_SESSION['customer_id'] = $row_customer['customer_id'];
         echo "<script>alert('Your are logged in')</script>";
         echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
     }else{
-        $_SESSION['customer_email'] = $customer_email;
+        $_SESSION['customer_email'] = $row_customer['customer_email'];
         $_SESSION['customer_name'] = $row_customer['customer_name'];
         echo "<script>alert('Your are logged in')</script>";
         echo "<script>window.open('checkout.php','_self')</script>";

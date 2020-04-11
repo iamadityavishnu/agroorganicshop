@@ -4,6 +4,10 @@ $active = "My Account";
 include("includes/header.php");
 
 ?>
+<?php
+
+if(!isset($_SESSION['customer_email'])){
+    ?>
 
     <div id="content"> <!-- content begins -->
         <div class="container"> <!-- container begins -->
@@ -81,6 +85,12 @@ include("includes/header.php");
 
         </div> <!-- container ends -->
     </div> <!-- content ends -->
+
+    <? }else{
+        echo "<div class='text-center text-success' style='height: 60vh; margin-top: 20vh; font-size: 3vw'>Did you forget? You are already our valuable member.</div>";
+    }
+
+    ?>
 
     <?php
         include("includes/footer.php");
