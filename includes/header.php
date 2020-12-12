@@ -43,6 +43,7 @@ if(isset($_GET['pro_id'])){
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16"> 
 </head>
 <body>
 
@@ -50,7 +51,7 @@ if(isset($_GET['pro_id'])){
 
         <div class="container"> <!-- begenning of container -->
 
-            <div class="col-md-6 offer"> <!-- col-md-6 offer begin -->
+            <div class="col-md-6 offer hidden-xs"> <!-- col-md-6 offer begin -->
 
                 <a href="#" class="btn btn-success btn-sm">
                 <?php
@@ -109,8 +110,8 @@ if(isset($_GET['pro_id'])){
             <div class="navbar-header"> <!-- navbar-header start -->
 
                 <a href="index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
-                    <img src="images/Ob - logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
-                    <img src="images/ecom-store-logo-mobile.png" alt="Organic Basket Logo" class="visible-xs">
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="visible-xs">
                 </a> <!-- navbar-brand home finish -->
 
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

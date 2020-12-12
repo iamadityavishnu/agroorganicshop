@@ -41,7 +41,8 @@ include("includes/header.php");
                                 <thead> <!-- thead begins -->
                                 
                                     <tr> <!-- tr begins -->
-                                        <th colspan="2">Product</th>
+                                        <th class="hidden-xs" colspan="2">Product</th>
+                                        <th class="visible-xs-* hidden-sm hidden-md hidden-lg" colspan="1">Product</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
                                         <th>Weight</th>
@@ -73,7 +74,7 @@ include("includes/header.php");
                                     ?>
                                 
                                     <tr> <!-- tr begins -->
-                                        <td>
+                                        <td class="hidden-xs">
                                             <img class="img-responsive" src="admin_area/product_images/<?php echo $product_img1; ?>" alt="Product 4">
                                         </td>
                                         <td>
@@ -96,7 +97,7 @@ include("includes/header.php");
                                         </td>
                                     </tr> <!-- tr ends -->
 
-                                    <? } } ?>
+                                    <?php } } ?>
                                 
                                 </tbody> <!-- tbody ends -->
 
@@ -163,7 +164,7 @@ include("includes/header.php");
                 ?>
 
                 <div id="row same-height-row"> <!-- row same-height-row begins -->
-                    <div class="col-md-3 col-sm-6"> <!-- col-md-3 col-sm-6 begins -->
+                    <div class="col-md-3 col-sm-6 hidden-xs hidden-sm"> <!-- col-md-3 col-sm-6 begins -->
                         <div class="box same-height headline"> <!-- box same-height headline begins -->
                             <h3 class="text-center">Products you may like</h3>
                         </div> <!-- box same-height headline ends -->
@@ -180,7 +181,7 @@ include("includes/header.php");
 
                         echo "
 
-                        <div class='col-md-3 col-sm-6 center-responsive'> <!-- col-md-3 col-sm-6 center-responsive begins -->
+                        <div class='col-md-3 col-sm-6 center-responsive hidden-xs hidden-sm'> <!-- col-md-3 col-sm-6 center-responsive begins -->
                             <div class='product same-height'> <!-- product same-height begins -->
                                 <a href='details.php?pro_id=$pro_id'>
                                     <img class='img-responsive' src='admin_area/product_images/$pro_img1' alt='Product 4'>

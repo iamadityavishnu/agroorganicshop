@@ -51,8 +51,8 @@
             <div class="navbar-header"> <!-- navbar-header start -->
 
                 <a href="../index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
-                    <img src="images/Ob - logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
-                    <img src="images/ecom-store-logo-mobile.png" alt="Organic Basket Logo" class="visible-xs">
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="visible-xs">
                 </a> <!-- navbar-brand home finish -->
 
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

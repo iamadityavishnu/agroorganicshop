@@ -95,7 +95,7 @@
                 
                 </p> <!-- p ends -->
 
-                <a href="../contacts.php">Check our contact page</a>
+                <a href="../contact.php">Check our contact page</a>
 
                 <hr class="hidden-md hidden-lg">
             

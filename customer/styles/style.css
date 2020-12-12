@@ -110,8 +110,8 @@ body{
 }
 .btn-primary{
     color: rgb(red, green, blue);
-    background: rgb(79 , 191, 168);
-    border-color: rgb(65, 179, 156);
+    background: rgb(132, 161, 37);
+    border-color: rgb(96, 117, 27);
 }
 #search .navbar-form{
     float: right;

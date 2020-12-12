@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_SESSION['admin_email']) && ($_SESSION['timeout'] + 10 * 60 > time())){
+        $_SESSION['timeout'] = time();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -7,6 +14,7 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/gentelella/1.3.0/css/custom.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="css/index-style.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
 
 </head>
 <body>
@@ -26,11 +34,11 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            <img src="images/aditya.jpg" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
-            <h2>John Doe</h2>
+            <h2><?php echo $_SESSION['admin_email']; ?></h2>
           </div>
         </div>
         <!-- /menu profile quick info -->
@@ -51,25 +59,15 @@
               </li>
               <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
+                  <li><a href="index.php">New Orders</a></li>
+                  <li><a href="index.php?shipped_orders">Shipped Orders</a></li>
+                  <li><a href="form_upload.html">Fulfilled Orders</a></li>
                   <li><a href="index.php?insert_products">Insert Products</a></li>
-                  <li><a href="index.php?update_slider">Update Slider</a></li>
-                  <li><a href="form_validation.html">Form Validation</a></li>
-                  <li><a href="form_wizards.html">Form Wizard</a></li>
-                  <li><a href="form_upload.html">Form Upload</a></li>
-                  <li><a href="form_buttons.html">Form Buttons</a></li>
                 </ul>
               </li>
               <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                  <li><a href="general_elements.html">General Elements</a></li>
-                  <li><a href="media_gallery.html">Media Gallery</a></li>
-                  <li><a href="typography.html">Typography</a></li>
-                  <li><a href="icons.html">Icons</a></li>
-                  <li><a href="glyphicons.html">Glyphicons</a></li>
-                  <li><a href="widgets.html">Widgets</a></li>
-                  <li><a href="invoice.html">Invoice</a></li>
-                  <li><a href="inbox.html">Inbox</a></li>
-                  <li><a href="calendar.html">Calendar</a></li>
+                  <li><a href="index.php?update_slider">Update Slider</a></li>
                 </ul>
               </li>
               <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
@@ -152,7 +150,7 @@
           <a data-toggle="tooltip" data-placement="top" title="Lock">
             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
           </a>
-          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+          <a data-toggle="tooltip" data-placement="top" title="Logout" href="adminn_loginn.php">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
           </a>
         </div>
@@ -171,7 +169,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="">
               <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="images/img.jpg" alt="">John Doe
+                <img src="images/aditya.jpg" alt=""><?php echo $_SESSION['admin_email']; ?>
                 <span class=" fa fa-angle-down"></span>
               </a>
               <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -183,7 +181,7 @@
                   </a>
                 </li>
                 <li><a href="javascript:;">Help</a></li>
-                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                <li><a href="adminn_loginn.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
               </ul>
             </li>
 
@@ -195,7 +193,7 @@
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                 <li>
                   <a>
-                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span class="image"><img src="images/aditya.jpg" alt="Profile Image" /></span>
                     <span>
                           <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -207,7 +205,7 @@
                 </li>
                 <li>
                   <a>
-                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span class="image"><img src="images/aditya.jpg" alt="Profile Image" /></span>
                     <span>
                           <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -219,7 +217,7 @@
                 </li>
                 <li>
                   <a>
-                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span class="image"><img src="images/aditya.jpg" alt="Profile Image" /></span>
                     <span>
                           <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -231,7 +229,7 @@
                 </li>
                 <li>
                   <a>
-                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span class="image"><img src="images/aditya.jpg" alt="Profile Image" /></span>
                     <span>
                           <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -266,6 +264,8 @@
           include("slider_update.php");
         }elseif(isset($_GET['insert_products'])) {
           include("insert_product.php");
+        }elseif(isset($_GET['shipped_orders'])) {
+          include("shipped_orders.php");
         }
       ?>
     </div>
@@ -281,3 +281,10 @@
 
 </body>
 </html>
+
+<?php
+    }
+    else{
+        echo "<script>window.open('adminn_loginn.php','_self')</script>";
+    }
+?>

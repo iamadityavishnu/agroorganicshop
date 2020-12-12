@@ -20,7 +20,7 @@ include("includes/header.php");
 
             </div> <!-- col-md-12 ends -->
 
-            <div class="col-md-3"> <!-- col-md-3 begins -->
+            <div class="col-md-3 hidden-xs hidden-sm"> <!-- col-md-3 begins -->
 
             <?php
                 include("includes/sidebar.php");

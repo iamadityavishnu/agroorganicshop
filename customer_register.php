@@ -86,7 +86,7 @@ if(!isset($_SESSION['customer_email'])){
         </div> <!-- container ends -->
     </div> <!-- content ends -->
 
-    <? }else{
+    <?php }else{
         echo "<div class='text-center text-success' style='height: 60vh; margin-top: 20vh; font-size: 3vw'>Did you forget? You are already our valuable member.</div>";
     }
 

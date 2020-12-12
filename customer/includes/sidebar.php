@@ -23,13 +23,13 @@
                     <div class="center-cropped" style="background-image: url('https://source.unsplash.com/collection/3388465');">
                     <!-- RANDOM PROFILE PICTURE PART -->  
                     </div>
-                    <?
+                    <?php
                 }else{
                     ?>
-                    <div class="center-cropped" style="background-image: url('customer_images/<? echo $customer_image; ?>');">
+                    <div class="center-cropped" style="background-image: url('customer_images/<?php echo $customer_image; ?>');">
                     <!-- PROFILE PICTURE PART -->  
                     </div>
-                    <?
+                    <?php
                 }
             ?>
 
@@ -43,7 +43,13 @@
 
         <h3 align="center" class="panel-heading"> <!-- panel-heading begins --> <!-- class="panel-title" -->
         
-            <?php echo $customer_name; ?>
+        <?php 
+            if(isset($_SESSION['customer_email'])){
+                echo $customer_name;
+            }else{
+                echo "Hi, Guest";
+            }
+        ?>
         
         </h3> <!-- panel-heading ends -->
     

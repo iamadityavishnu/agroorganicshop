@@ -3,14 +3,14 @@
 <div class=""> <!-- box begins --> 
     <center> <!-- center begins -->
 
-        <h1>New Orders</h1>
+        <h1>Shipped Orders</h1>
 
     </center> <!-- center ends -->
 
     <hr>
 
     <div class="table-responsive"> <!-- table-responsive begins -->
-        <form style="overflow: hidden" method="post" action="index.php">
+        <form style="overflow: hidden" method="post" action="index.php?shipped_orders">
             <table class="table table-bordered table-hover"> <!-- table table-bordered table-hover begins -->
             
                 <thead> <!-- thead begins -->
@@ -22,9 +22,6 @@
                         <th>Product </th>
                         <th>Quantity </th>
                         <th>Weight </th>
-                        <th>Amount Paid </th>
-                        <th>Order Date </th>
-                        <th>Mark as shipped </th>
 
                     </tr> <!-- tr ends -->
 
@@ -47,8 +44,8 @@
 
                         $start_from = ($page-1) * $per_page;
 
-                        $select_orders = "select * from pending_orders order by 1 DESC LIMIT $start_from,$per_page";
-                        $run_orders = mysqli_query($con,$select_orders);
+                        $select_orders = "select * from customer_orders WHERE order_status='shipped' order by 1 DESC LIMIT $start_from,$per_page";
+                        $run_orders = mysqli_query($con, $select_orders);
                         
                         while($row_orders = mysqli_fetch_array($run_orders)){
 
@@ -57,8 +54,8 @@
                             $invoice_no = $row_orders['invoice_no'];
                             $product_id = $row_orders['product_id'];
                             $product_title = $row_orders['product_title'];
-                            $amount_paid = $row_orders['amount_paid'];
-                            $date_of_purchase = $row_orders['date_of_purchase'];
+                            // $amount_paid = $row_orders['amount_paid'];
+                            // $date_of_purchase = $row_orders['date_of_purchase'];
                             $qty = $row_orders['qty'];
                             // $status = ucfirst($row_orders['order_status']);
                             $weight = $row_orders['weight'];
@@ -77,9 +74,7 @@
                                 <td>$product_title</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
-                                <td>&#8377; $amount_paid</td>
-                                <td>$date_of_purchase</td>
-                                <td><button type='submit' name='shipped[]' value='$order_id'>&#128674 &#9989</button></td>
+                                
 
                             </tr> <!-- tr ends -->
                         

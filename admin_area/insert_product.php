@@ -307,7 +307,7 @@ if(isset($_POST['submit'])){
 
     if($run_product){
         echo "<script>alert('Product has been added succesfully')</script>";
-        echo "<script>window.open('insert_product.php','_self')</script>";
+        echo "<script>window.open('index.php?insert_products','_self')</script>";
     }
 }
 
