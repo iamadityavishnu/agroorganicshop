@@ -3,7 +3,7 @@
 <div class=""> <!-- box begins --> 
     <center> <!-- center begins -->
 
-        <h1>New Orders</h1>
+        <h1>New Orders &#10024;</h1>
 
     </center> <!-- center ends -->
 
@@ -79,7 +79,7 @@
                                 <td>$weight $weight_unit</td>
                                 <td>&#8377; $amount_paid</td>
                                 <td>$date_of_purchase</td>
-                                <td><button type='submit' name='shipped[]' value='$order_id'>&#128674 &#9989</button></td>
+                                <td><button type='submit' name='shipped[]' value='$order_id'>&#128666 &#9989</button></td>
 
                             </tr> <!-- tr ends -->
                         

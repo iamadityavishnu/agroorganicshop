@@ -85,11 +85,11 @@
 
                 <p> <!-- p begins -->
                 
-                    <strong>Organic Basket Inc.</strong>
-                    <br>Kaloor
-                    <br>Ernakulam
+                    <strong>Ayur & Naturals</strong>
+                    <br>Erumely
+                    <br>Kottayam
                     <br>Kerala, India
-                    <br>682017
+                    <br>686509
                     <br><a href="tel:+919947189437">+91 99471 89437</a>
                     <br><a href="mailto:adityavishnu3610@gmail.com">adityavishnu3610@gmail.com</a>
                 
@@ -133,7 +133,7 @@
                 <h4>Keep in touch</h4>
 
                 <p class="social">
-                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="https://www.facebook.com/ayurandnaturals/" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-twitter"></a>
                 </p>
@@ -150,7 +150,7 @@
         <div class="col-md-6"> <!-- col-md-6 begins -->
             <p class="pull-left">
 
-                &copy; <?php $date_array = getdate(); echo $date_array['year']; ?> OrganicBasket. All rights reserved
+                &copy; <?php $date_array = getdate(); echo $date_array['year']; ?> Ayur & Naturals. All rights reserved
 
             </p>
         </div> <!-- col-md-6 ends -->

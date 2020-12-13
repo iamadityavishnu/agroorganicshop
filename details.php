@@ -1,6 +1,6 @@
 <?php 
 
-$active = "Home";
+$active = "Shop";
 include("includes/header.php"); 
 
 ?>

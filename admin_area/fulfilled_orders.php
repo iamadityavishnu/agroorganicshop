@@ -3,7 +3,7 @@
 <div class=""> <!-- box begins --> 
     <center> <!-- center begins -->
 
-        <h1>Shipped Orders &#128666;</h1>
+        <h1>Fulfilled Orders &#9989;</h1>
 
     </center> <!-- center ends -->
 
@@ -22,7 +22,6 @@
                         <th>Product </th>
                         <th>Quantity </th>
                         <th>Weight </th>
-                        <th>Mark delivered</th>
 
                     </tr> <!-- tr ends -->
 
@@ -75,7 +74,6 @@
                                 <td>$product_title</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
-                                <td><button type='submit' name='delivered[]' value='$order_id'>&#128230 &#9989</button></td>
                                 
 
                             </tr> <!-- tr ends -->

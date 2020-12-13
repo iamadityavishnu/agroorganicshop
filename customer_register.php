@@ -128,7 +128,7 @@ if(isset($_POST['register'])){
         $_SESSION['customer_email'] = $c_email;
         $_SESSION['customer_name'] = $c_name;
         echo "<script>alert('You have successfully registered')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
+        echo "<script>window.open('customer/my_account.php?edit_account','_self')</script>";
     }
 }
 

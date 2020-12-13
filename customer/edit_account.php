@@ -27,56 +27,56 @@
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Name</label>
+            <label>Name<su style="color: red;">*</su></label>
             <input type="text" name="c_name" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $_SESSION['customer_name'];} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Email</label>
+            <label>Email<su style="color: red;">*</su></label>
             <input type="email" name="c_email" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $_SESSION['customer_email'];} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Phone</label>
+            <label>Phone<su style="color: red;">*</su></label>
             <input type="number" name="c_phone" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_contact;} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Address Line 1</label>
+            <label>Address Line 1<su style="color: red;">*</su></label>
             <input type="text" name="c_address_1" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_address_1;} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Address Line 2</label>
+            <label>Address Line 2<su style="color: red;">*</su></label>
             <input type="text" name="c_address_2" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_address_2;} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>City</label>
+            <label>City<su style="color: red;">*</su></label>
             <input type="text" name="c_city" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_city;} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>State</label>
+            <label>State<su style="color: red;">*</su></label>
             <input type="text" name="c_state" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_state;} ?>" required>
 
         </div> <!-- form-group ends -->
 
         <div class="form-group"> <!-- form-group begins -->
 
-            <label>Postal Code</label>
+            <label>Postal Code<su style="color: red;">*</su></label>
             <input type="number" name="c_pincode" class="form-control" value="<?php if(isset($_SESSION['customer_email'])){ echo $customer_pincode;} ?>" required>
 
         </div> <!-- form-group ends -->
