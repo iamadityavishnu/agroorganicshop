@@ -19,6 +19,7 @@
 
                         <th>Order ID </th>
                         <th>Invoice No </th>
+                        <th>Address </th>
                         <th>Product </th>
                         <th>Quantity </th>
                         <th>Weight </th>
@@ -67,6 +68,11 @@
 
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
                             
+                            $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
+                            $run_customer = mysqli_query($con, $select_customer);
+
+                            $row_customer = mysqli_fetch_array($run_customer);
+                            
                             echo "
                             <tbody> <!-- tbody begins -->
                         
@@ -74,6 +80,12 @@
 
                                 <td>$order_id</td>
                                 <td>$invoice_no</td>
+                                <td>$row_customer[0]<br>
+                                    $row_customer[1]<br>
+                                    $row_customer[2]<br>
+                                    $row_customer[3]<br>
+                                    $row_customer[4]
+                                </td>
                                 <td>$product_title</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>

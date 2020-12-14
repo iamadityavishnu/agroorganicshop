@@ -19,9 +19,12 @@
 
                         <th>Order ID </th>
                         <th>Invoice No </th>
+                        <th>Customer Details </th>
                         <th>Product </th>
+                        <th>Date </th>
                         <th>Quantity </th>
                         <th>Weight </th>
+                        <th>Amount </th>
 
                     </tr> <!-- tr ends -->
 
@@ -44,7 +47,7 @@
 
                         $start_from = ($page-1) * $per_page;
 
-                        $select_orders = "select * from customer_orders WHERE order_status='shipped' order by 1 DESC LIMIT $start_from,$per_page";
+                        $select_orders = "select * from customer_orders WHERE order_status='delivered' order by order_date DESC LIMIT $start_from,$per_page";
                         $run_orders = mysqli_query($con, $select_orders);
                         
                         while($row_orders = mysqli_fetch_array($run_orders)){
@@ -54,16 +57,19 @@
                             $invoice_no = $row_orders['invoice_no'];
                             $product_id = $row_orders['product_id'];
                             $product_title = $row_orders['product_title'];
-                            // $amount_paid = $row_orders['amount_paid'];
-                            // $date_of_purchase = $row_orders['date_of_purchase'];
+                            $amount_paid = $row_orders['due_amount'];
+                            $date_of_purchase = $row_orders['order_date'];
                             $qty = $row_orders['qty'];
-                            // $status = ucfirst($row_orders['order_status']);
                             $weight = $row_orders['weight'];
-                            // $p_title = $row_orders['product_title'];
                             // $p_img = $row_orders['product_thumbnail'];
 
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
                             
+                            $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
+                            $run_customer = mysqli_query($con, $select_customer);
+
+                            $row_customer = mysqli_fetch_array($run_customer);
+
                             echo "
                             <tbody> <!-- tbody begins -->
                         
@@ -71,9 +77,17 @@
 
                                 <td>$order_id</td>
                                 <td>$invoice_no</td>
+                                <td>$row_customer[0]<br>
+                                    $row_customer[1]<br>
+                                    $row_customer[2]<br>
+                                    $row_customer[3]<br>
+                                    $row_customer[4]
+                                </td>
                                 <td>$product_title</td>
+                                <td>$date_of_purchase</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
+                                <td>$amount_paid</td>
                                 
 
                             </tr> <!-- tr ends -->

@@ -19,6 +19,7 @@
 
                         <th>Order ID </th>
                         <th>Invoice No </th>
+                        <th>Customer Details </th>
                         <th>Product </th>
                         <th>Quantity </th>
                         <th>Weight </th>
@@ -64,7 +65,12 @@
                             // $p_img = $row_orders['product_thumbnail'];
 
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
-                            
+
+                            $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
+                            $run_customer = mysqli_query($con, $select_customer);
+
+                            $row_customer = mysqli_fetch_array($run_customer);
+
                             echo "
                             <tbody> <!-- tbody begins -->
                         
@@ -72,6 +78,12 @@
 
                                 <td>$order_id</td>
                                 <td>$invoice_no</td>
+                                <td>$row_customer[0]<br>
+                                    $row_customer[1]<br>
+                                    $row_customer[2]<br>
+                                    $row_customer[3]<br>
+                                    $row_customer[4]
+                                </td>
                                 <td>$product_title</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
@@ -137,18 +149,17 @@
 
 <?php
 
-    if(isset($_POST['shipped'])){
-        echo "<script>alert('Marking order ID " . $_POST['shipped'][0] . " as shipped');</script>";
-        foreach($_POST['shipped'] as $shipped_order_id){
+    if(isset($_POST['delivered'])){
+        echo "<script>alert('Marking order ID " . $_POST['delivered'][0] . " as delivered');</script>";
+        foreach($_POST['delivered'] as $delivered_order_id){
 
-            $update_order = "update customer_orders SET order_status='shipped' WHERE order_id=$shipped_order_id";
+            $update_order = "update customer_orders SET order_status='delivered' WHERE order_id=$delivered_order_id";
             $run_update_order = mysqli_query($con, $update_order);
-
-            $delete_order = "delete from pending_orders where order_id='$shipped_order_id'";
-            $run_delete = mysqli_query($con, $delete_order);
-            if($run_delete){
-                echo "<script>window.open('index.php','_self')</script>";
-            }
+            // $delete_order = "delete from pending_orders where order_id='$shipped_order_id'";
+            // $run_delete = mysqli_query($con, $delete_order);
+            // if($run_delete){
+            echo "<script>window.open('index.php?shipped_orders','_self')</script>";
+            // }
         }
     }
 
