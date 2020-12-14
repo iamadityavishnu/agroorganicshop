@@ -90,6 +90,8 @@ include("includes/header.php");
 
                                     $pro_img1 = $row_products['product_img1'];
 
+                                    $stock_status = $row_products['in_stock'];
+
                                     echo "
 
                                         <div class='col-md-4 col-sm-6 center-responsive'>
@@ -113,12 +115,15 @@ include("includes/header.php");
 
                                                         <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
                                                             View Details
-                                                        </a>
+                                                        </a>";
+                                                        
+                                                        if($stock_status==1){
+                                                            echo "<a class='btn btn-primary' href='details.php?pro_id=$pro_id'><i class='fa fa-shopping-cart'></i> Add to Cart</a>";
+                                                        }else{
+                                                            echo "<a class='btn btn-warning' href='details.php?pro_id=$pro_id'><i class='fa fa-shopping-cart'></i> Out of stock</a>";
+                                                        }
 
-                                                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
-                                                            <i class='fa fa-shopping-cart'></i> Add to Cart
-                                                        </a>
-
+                                                        echo "
                                                     </p>
                                                 </div>
                                             

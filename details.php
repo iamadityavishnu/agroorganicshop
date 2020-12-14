@@ -17,10 +17,10 @@ include("includes/header.php");
                         Shop
                     </li>
                     <li>
-                        <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a>
+                        <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php if(isset($pro_title)){echo $p_cat_title;} ?></a>
                     </li>
                     <li>
-                        <?php echo $pro_title; ?>
+                        <?php if(isset($pro_title)){echo $pro_title;} ?>
                     </li>
                 </ul> <!-- breadcrumb ends -->
 
@@ -74,11 +74,23 @@ include("includes/header.php");
 
                     <div class="col-sm-6"> <!-- col-sm-6 begins -->
                         <div class="box"> <!-- box begins -->
-                            <h1 class="text-center"><?php echo $pro_title; ?></h1>
+                            <h1 class="text-center"><?php if(isset($pro_title)){echo $pro_title;} ?></h1>
 
                             <?php add_cart(); ?>
 
-                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"> <!-- form-horizontal begins -->
+                            <?php
+                                if(isset($stock_status)){
+                                    if($stock_status==1){
+                                        echo "<form action='details.php?add_cart=";
+                                        echo $product_id;
+                                        echo "class='form-horizontal' method='post'>";
+                                    }else{
+                                        echo "<form action='' class='form-horizontal' method='post'>";
+                                    }
+                                }
+                            ?>
+
+                            <!-- form-horizontal begins -->
                                 <div class="form-group"> <!-- form begins -->
                                     <label for="" class="col-md-5 control-label">Product Quantity</label>
 
@@ -93,7 +105,7 @@ include("includes/header.php");
                                     <label class="col-md-5 control-label">Product Weigth</label>
 
                                     <div class="col-md-7"> <!-- col-md-7 begins -->
-                                        <select name="product_wt" id="" class="form-control"> <!-- form-control begins -- product_size--> 
+                                        <select name="product_wt" id="" class="form-control" onchange="showPrice(this.value, <?php echo $_GET['pro_id']; ?>)"> <!-- form-control begins -- product_size--> 
                                             <option value="<?php echo $pro_wt1; ?>"><?php if($pro_wt1<1000){echo $pro_wt1; echo " Grams";}else{ echo $pro_wt1/1000; echo " Kg";} ?></option>
                                             <?php if($pro_wt2!=0){
                                                 if($pro_wt2<1000){
@@ -102,8 +114,9 @@ include("includes/header.php");
                                                     ";
                                                 }
                                                 else{
+                                                    $weight_in_kg = $pro_wt2/1000;
                                                     echo "
-                                                        <option value='$pro_wt2'>$pro_wt2/1000 Kg</option>
+                                                        <option value='$pro_wt2'>$weight_in_kg Kg</option>
                                                     ";
                                                 }
                                             }
@@ -114,8 +127,9 @@ include("includes/header.php");
                                                     ";
                                                 }
                                                 else{
+                                                    $weight_in_kg = $pro_wt3/1000;
                                                     echo "
-                                                        <option value='$pro_wt3'>$pro_wt3/1000 Kg</option>
+                                                        <option value='$pro_wt3'>$weight_in_kg Kg</option>
                                                     ";
                                                 }
                                             }
@@ -125,9 +139,23 @@ include("includes/header.php");
 
                                 </div> <!-- form-group ends -->
 
-                                <p class="price">Rs. <?php echo $pro_price; ?></p>
+                                <p class="price" id="price">
+                                    Rs. <?php if(isset($pro_price)){echo $pro_price;} ?>
+                                </p>
+                                
+                                <input name="price" id="price-to-pass" type="hidden" value="<?php if(isset($pro_price)){echo $pro_price;} ?>">
+
                                 <p class="text-center buttons">
-                                    <button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button>
+                                    <?php
+                                        if(isset($stock_status)){
+                                            if($stock_status==1){
+                                                echo "<button class='btn btn-primary i fa fa-shopping-cart'> Add to cart</button>";
+                                            }else{
+                                                echo "<button class='btn btn-warning disabled i fa fa-shopping-cart'> Out of stock</button>";
+                                            }
+                                        }
+                                    ?>
+                                    
                                 </p>
 
                             </form> <!-- form-horizontal ends -->
@@ -255,6 +283,27 @@ include("includes/header.php");
 
 <script src="js/jquery-331.min.js"></script>
 <script src="js/bootstrap-337.min.js"></script>
+
+<script>
+
+function showPrice(wt, p_id) {
+  var xhttp;
+  if (wt == "") {
+    document.getElementById("price").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("price").innerHTML = "Rs. " + this.responseText;
+    document.getElementById("price-to-pass").setAttribute("value", this.responseText);
+    }
+  };
+  xhttp.open("GET", "getprice.php?w="+wt+"&p="+p_id, true);
+  xhttp.send();
+}
+
+</script>
 
 </body>
 </html>

@@ -60,14 +60,15 @@ include("includes/header.php");
                                             $pro_id = $row_cart['p_id'];
                                             $pro_wt = $row_cart['weight'];
                                             $pro_qty = $row_cart['qty'];
+                                            $pro_price = $row_cart['price'];
 
                                             $get_products = "select * from products where product_id='$pro_id'";
                                             $run_products = mysqli_query($con,$get_products);
                                             while($row_products = mysqli_fetch_array($run_products)){
                                                 $product_title = $row_products['product_title'];
                                                 $product_img1 = $row_products['product_img1'];
-                                                $only_price = $row_products['product_price'];
-                                                $sub_total = $row_products['product_price']*$pro_qty;
+                                                $only_price = $pro_price;
+                                                $sub_total = $pro_price*$pro_qty;
                                                 $total += $sub_total;
                                             
                                         

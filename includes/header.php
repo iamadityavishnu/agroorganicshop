@@ -26,6 +26,8 @@ if(isset($_GET['pro_id'])){
     $pro_wt2 = $row_product['product_wt2'];
     $pro_wt3 = $row_product['product_wt3'];
 
+    $stock_status = $row_product['in_stock'];
+
     $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
     $run_p_cat = mysqli_query($con,$get_p_cat);
     $row_p_cat = mysqli_fetch_array($run_p_cat);
