@@ -10,7 +10,7 @@
     <hr>
 
     <div class="table-responsive"> <!-- table-responsive begins -->
-        <form style="overflow: hidden" method="post" action="index.php?shipped_orders">
+        <!-- <form style="overflow: hidden" method="post" action="index.php?shipped_orders"> -->
             <table class="table table-bordered table-hover"> <!-- table table-bordered table-hover begins -->
             
                 <thead> <!-- thead begins -->
@@ -106,7 +106,7 @@
                         
                        <?php
 
-                        $query = "select * from pending_orders";
+                        $query = "select * from customer_orders";
                         $result = mysqli_query($con,$query);
                         $total_records = mysqli_num_rows($result);
                         $total_pages = ceil($total_records/$per_page);
@@ -142,7 +142,7 @@
                 </center>
 
             </table> <!-- table table-bordered table-hover ends -->
-        </form>
+        <!-- </form> -->
     </div> <!-- table-responsive ends -->
 </div> <!-- box ends -->
 
@@ -156,11 +156,11 @@
             $update_order = "update customer_orders SET order_status='shipped' WHERE order_id=$shipped_order_id";
             $run_update_order = mysqli_query($con, $update_order);
 
-            $delete_order = "delete from pending_orders where order_id='$shipped_order_id'";
-            $run_delete = mysqli_query($con, $delete_order);
-            if($run_delete){
-                echo "<script>window.open('index.php','_self')</script>";
-            }
+            // $delete_order = "delete from pending_orders where order_id='$shipped_order_id'";
+            // $run_delete = mysqli_query($con, $delete_order);
+            // if($run_delete){
+                // echo "<script>window.open('index.php','_self')</script>";
+            // }
         }
     }
 

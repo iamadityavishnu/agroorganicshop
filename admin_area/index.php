@@ -16,6 +16,24 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
 
+  <style type="text/css">
+    .stock-out-btn{
+        background: #de5959;
+        color: white;
+    }
+    .stock-in-btn{
+        background: #59de81;
+    }
+    .stock-out-btn, .stock-in-btn{
+        border: none;
+        height: 50px;
+        width: 80px;
+    }
+    .oss{
+        color: red;
+    }
+  </style>
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -53,7 +71,7 @@
               <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                   <li><a href="index.php">Dashboard</a></li>
-                  <!-- <li><a href="index2.html">Dashboard2</a></li> -->
+                  <li><a href="index.php?all_products">All Products</a></li>
                 </ul>
               </li>
               <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -267,6 +285,8 @@
           include("shipped_orders.php");
         }elseif(isset($_GET['fulfilled_orders'])) {
           include("fulfilled_orders.php");
+        }elseif(isset($_GET['all_products'])) {
+          include("all_products.php");
         }
       ?>
     </div>

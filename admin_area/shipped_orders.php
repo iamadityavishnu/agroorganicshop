@@ -106,7 +106,7 @@
                         
                        <?php
 
-                        $query = "select * from pending_orders";
+                        $query = "select * from customer_orders";
                         $result = mysqli_query($con,$query);
                         $total_records = mysqli_num_rows($result);
                         $total_pages = ceil($total_records/$per_page);
