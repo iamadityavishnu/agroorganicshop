@@ -35,9 +35,9 @@
 
                     $per_page = 6;
 
-                    if(isset($_GET['page'])){
+                    if(isset($_GET['default_page'])){
 
-                        $page = $_GET['page'];
+                        $page = $_GET['default_page'];
 
                         }
                         else{
@@ -63,40 +63,76 @@
                             $qty = $row_orders['qty'];
                             // $status = ucfirst($row_orders['order_status']);
                             $weight = $row_orders['weight'];
+                            $is_guest = $row_orders['guest_customer'];
                             // $p_title = $row_orders['product_title'];
                             // $p_img = $row_orders['product_thumbnail'];
 
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
+            
+
+                            if($is_guest == 0){
+                                $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
+                                $run_customer = mysqli_query($con, $select_customer);
+
+                                $row_customer = mysqli_fetch_array($run_customer);
+
+                                echo "
+                                <tbody> <!-- tbody begins -->
                             
-                            $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
-                            $run_customer = mysqli_query($con, $select_customer);
+                                <tr> <!-- tr begins -->
 
-                            $row_customer = mysqli_fetch_array($run_customer);
+                                    <td>$order_id</td>
+                                    <td>$invoice_no</td>
+                                    <td>$row_customer[0]<br>
+                                        $row_customer[1]<br>
+                                        $row_customer[2]<br>
+                                        $row_customer[3]<br>
+                                        $row_customer[4]
+                                    </td>
+                                    <td>$product_title</td>
+                                    <td>$qty</td>
+                                    <td>$weight $weight_unit</td>
+                                    <td>&#8377; $amount_paid</td>
+                                    <td>$date_of_purchase</td>
+                                    <td><button type='submit' name='shipped[]' value='$order_id'>&#128666 &#9989</button></td>
+
+                                </tr> <!-- tr ends -->
                             
-                            echo "
-                            <tbody> <!-- tbody begins -->
-                        
-                            <tr> <!-- tr begins -->
+                            </tbody> <!-- tbody ends -->
+                            ";
+                            
+                            }else{
+                                $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM guest_customers WHERE customer_id=$customer_id";
+                                $run_customer = mysqli_query($con, $select_customer);
 
-                                <td>$order_id</td>
-                                <td>$invoice_no</td>
-                                <td>$row_customer[0]<br>
-                                    $row_customer[1]<br>
-                                    $row_customer[2]<br>
-                                    $row_customer[3]<br>
-                                    $row_customer[4]
-                                </td>
-                                <td>$product_title</td>
-                                <td>$qty</td>
-                                <td>$weight $weight_unit</td>
-                                <td>&#8377; $amount_paid</td>
-                                <td>$date_of_purchase</td>
-                                <td><button type='submit' name='shipped[]' value='$order_id'>&#128666 &#9989</button></td>
+                                $row_customer = mysqli_fetch_array($run_customer);
 
-                            </tr> <!-- tr ends -->
-                        
-                        </tbody> <!-- tbody ends -->
-                        ";
+                                echo "
+                                <tbody> <!-- tbody begins -->
+                            
+                                <tr> <!-- tr begins -->
+
+                                    <td>$order_id</td>
+                                    <td>$invoice_no</td>
+                                    <td>$row_customer[0]<br>
+                                        $row_customer[1]<br>
+                                        $row_customer[2]<br>
+                                        $row_customer[3]<br>
+                                        $row_customer[4]
+                                    </td>
+                                    <td>$product_title</td>
+                                    <td>$qty</td>
+                                    <td>$weight $weight_unit</td>
+                                    <td>&#8377; $amount_paid</td>
+                                    <td>$date_of_purchase</td>
+                                    <td><button type='submit' name='shipped[]' value='$order_id'>&#128666 &#9989</button></td>
+
+                                </tr> <!-- tr ends -->
+                            
+                            </tbody> <!-- tbody ends -->
+                            ";
+
+                            }
 
                         }
 
@@ -117,7 +153,7 @@
                         echo "
                             <li>
                             
-                                <a href='index.php?page=1'>".'First Page'."</a>
+                                <a href='index.php?default_page=1'>".'First Page'."</a>
                             
                             </li>
                         ";
@@ -126,7 +162,7 @@
                             echo "
                                 <li>
                             
-                                    <a href='index.php?page=".$i."'>".$i."</a>
+                                    <a href='index.php?default_page=".$i."'>".$i."</a>
                             
                                 </li>
                             ";
@@ -135,7 +171,7 @@
                         echo "
                             <li>
                             
-                                <a href='index.php?page=$total_pages'>".'Last Page'."</a>
+                                <a href='index.php?default_page=$total_pages'>".'Last Page'."</a>
                             
                             </li>
                         ";

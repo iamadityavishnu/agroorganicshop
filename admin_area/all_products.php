@@ -62,6 +62,8 @@
                             $product_wt2 = $row_orders['product_wt2'];
                             $product_wt3 = $row_orders['product_wt3'];
                             $product_price = $row_orders['product_price'];
+                            $product_price2 = $row_orders['product_price2'];
+                            $product_price3 = $row_orders['product_price3'];
                             $product_keywords = $row_orders['product_keywords'];
                             $product_desc = $row_orders['product_desc'];
                             $stock_status = $row_orders['in_stock'];
@@ -83,7 +85,10 @@
                                     $product_wt2 <br><br>
                                     $product_wt3 
                                 </td>
-                                <td>&#8377; $product_price</td>
+                                <td>&#8377; $product_price <br><br>
+                                    &#8377; $product_price2 <br><br>
+                                    &#8377; $product_price3
+                                </td>
                                 <td>$product_keywords</td>
                                 <td>$product_desc</td>
                                 ";
@@ -120,7 +125,7 @@
                         echo "
                             <li>
                             
-                                <a href='index.php?page=1'>".'First Page'."</a>
+                                <a href='index.php?all_products&page=1'>".'First Page'."</a>
                             
                             </li>
                         ";
@@ -129,7 +134,7 @@
                             echo "
                                 <li>
                             
-                                    <a href='index.php?page=".$i."'>".$i."</a>
+                                    <a href='index.php?all_products&page=".$i."'>".$i."</a>
                             
                                 </li>
                             ";
@@ -138,7 +143,7 @@
                         echo "
                             <li>
                             
-                                <a href='index.php?page=$total_pages'>".'Last Page'."</a>
+                                <a href='index.php?all_products&page=$total_pages'>".'Last Page'."</a>
                             
                             </li>
                         ";

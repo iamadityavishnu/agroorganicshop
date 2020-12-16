@@ -83,7 +83,7 @@ include("includes/header.php");
                                     if($stock_status==1){
                                         echo "<form action='details.php?add_cart=";
                                         echo $product_id;
-                                        echo "class='form-horizontal' method='post'>";
+                                        echo "' class='form-horizontal' method='post'>";
                                     }else{
                                         echo "<form action='' class='form-horizontal' method='post'>";
                                     }
@@ -142,7 +142,7 @@ include("includes/header.php");
                                 <p class="price" id="price">
                                     Rs. <?php if(isset($pro_price)){echo $pro_price;} ?>
                                 </p>
-                                
+
                                 <input name="price" id="price-to-pass" type="hidden" value="<?php if(isset($pro_price)){echo $pro_price;} ?>">
 
                                 <p class="text-center buttons">

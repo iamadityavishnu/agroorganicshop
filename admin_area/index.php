@@ -275,7 +275,7 @@
     <!-- page content -->
     <div class="right_col" role="main">
       <?php
-        if(empty($_GET) or isset($_GET['page'])){
+        if(empty($_GET) or isset($_GET['default_page'])){
           include("new_orders.php");
         }elseif (isset($_GET['update_slider'])) {
           include("slider_update.php");

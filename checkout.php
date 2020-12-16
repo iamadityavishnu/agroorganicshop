@@ -3,6 +3,17 @@
 $active = "My Account";
 include("includes/header.php");
 
+$ip_add = getRealIpUser();
+$select_cart = "select * from cart where ip_add='$ip_add'";
+$run_cart = mysqli_query($con,$select_cart);
+$cart_count = mysqli_num_rows($run_cart);
+
+// if ($cart_count==0){
+//     echo "new user";
+// }else{
+//     echo "active user";
+// }
+
 ?>
 
     <div id="content"> <!-- content begins -->
@@ -30,8 +41,10 @@ include("includes/header.php");
 
             <div class="col-md-9"> <!-- col-md-9 begins -->
                 <?php
-                    if(!isset($_SESSION['customer_email'])){
+                    if(!isset($_SESSION['customer_email']) && !isset($_GET['ca_guest'])){
                         include("customer/customer_login.php");
+                    }elseif(!isset($_SESSION['customer_email']) && isset($_GET['ca_guest'])){
+                        include("guest_checkout.php");
                     }else{
                         include("payment_options.php");
                     }

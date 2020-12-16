@@ -2,8 +2,8 @@
     <div class="box-header"> <!-- box-header begins -->
         <center> <!-- center begins -->
             <h1>Login</h1>
-            <p class="lead">Already have an account?</p>
-            <p class="text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <!-- <p class="lead"></p> -->
+            <p class="text-muted">Already have an account? Login to checkout</p>
         </center> <!-- center ends -->
     </div> <!-- box-header ends -->
     <form method="post" action="checkout.php"> <!-- form begins -->
@@ -22,6 +22,15 @@
             <button name="login" value="Login" class="btn btn-primary">
                 <i class="fa fa-sign-in"></i> Login
             </button>
+            <?php
+            if ($cart_count != 0) {
+                echo "
+                <button name='ca_guest' value='Guest' onclick='guestCheckout()' class='btn btn-default'>
+                    <i class='fa fa-sign-in'></i> Continue as Guest
+                </button>
+                ";
+            }
+            ?>
         </div> <!-- text-center ends -->
 
     </form> <!-- form ends -->
@@ -75,3 +84,11 @@ if(isset($_POST['login'])){
 }
 
 ?>
+
+<script>
+
+function guestCheckout() {
+  window.open("checkout.php?ca_guest");
+}
+
+</script>

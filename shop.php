@@ -96,7 +96,7 @@ include("includes/header.php");
 
                                         <div class='col-md-4 col-sm-6 center-responsive'>
                                         
-                                            <div class='product'>
+                                            <div class='product' style='min-height: 70vh'>
                                             
                                                 <a href='details.php?pro_id=$pro_id'>
                                                 
