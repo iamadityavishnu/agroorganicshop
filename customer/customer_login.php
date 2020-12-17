@@ -88,7 +88,7 @@ if(isset($_POST['login'])){
 <script>
 
 function guestCheckout() {
-  window.open("checkout.php?ca_guest");
+  window.open("checkout.php?ca_guest", "_self");
 }
 
 </script>

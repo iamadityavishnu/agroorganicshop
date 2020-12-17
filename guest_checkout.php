@@ -90,7 +90,8 @@ if(isset($_POST['place_order'])){
     $insert_customer = "insert into guest_customers (customer_name, customer_email, customer_state, customer_city, customer_contact, customer_address_1, customer_address_2, customer_pincode, customer_ip) values('$c_name','$c_email','$c_state','$c_city', '$c_phone', '$c_address_1', '$c_address_2', '$c_pincode','$c_ip')";
 
     $run_customer = mysqli_query($con,$insert_customer);
-    $sel_cart = "select * from cart where ip_add='$c_ip'";
+
+    $sel_cart = "select * from cart where ip_add='$c_ip'"; //TO EDIT
     $run_cart = mysqli_query($con,$sel_cart);
     $check_cart = mysqli_num_rows($run_cart);
 
@@ -100,7 +101,6 @@ if(isset($_POST['place_order'])){
     $customer_id = $row_customer['customer_id'];
 
     if($check_cart>0){
-        //If registered with item in cart
         echo "<script>window.open('guest_orders.php?c_id=".$customer_id."','_self')</script>";
     }
 }

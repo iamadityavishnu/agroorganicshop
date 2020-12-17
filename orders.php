@@ -22,7 +22,7 @@ $run_cart = mysqli_query($con,$select_cart);
 while($row_cart = mysqli_fetch_array($run_cart)){
     $pro_id = $row_cart['p_id'];
     $pro_qty = $row_cart['qty'];
-    $pro_weight = $row_cart['weight'];
+    $pro_weight = $row_cart['weight']; // ADD PRICE FROM CART
 
     $get_products = "select * from products where product_id='$pro_id'";
 
@@ -46,9 +46,11 @@ while($row_cart = mysqli_fetch_array($run_cart)){
 
         $run_delete_cart = mysqli_query($con,$delete_cart);
 
-        echo "<script>alert('Your order has been submitted')</script>";
-        echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
     }
+    
 }
+
+echo "<script>alert('Your order has been submitted')</script>";
+echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 
 ?>

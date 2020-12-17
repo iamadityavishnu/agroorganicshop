@@ -8,12 +8,6 @@ $select_cart = "select * from cart where ip_add='$ip_add'";
 $run_cart = mysqli_query($con,$select_cart);
 $cart_count = mysqli_num_rows($run_cart);
 
-// if ($cart_count==0){
-//     echo "new user";
-// }else{
-//     echo "active user";
-// }
-
 ?>
 
     <div id="content"> <!-- content begins -->

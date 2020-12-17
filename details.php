@@ -289,7 +289,7 @@ include("includes/header.php");
 function showPrice(wt, p_id) {
   var xhttp;
   if (wt == "") {
-    document.getElementById("price").innerHTML = "";
+    document.getElementById("price").innerHTML = ""; // TO EDIT
     return;
   }
   xhttp = new XMLHttpRequest();
