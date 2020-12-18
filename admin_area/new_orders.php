@@ -84,7 +84,7 @@ $total_pgo = mysqli_num_rows($result_pgo);
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
             
 
-                            $select_customer = "select customer_name, customer_email, customer_city, customer_contact, customer_pincode FROM customers WHERE customer_id=$customer_id";
+                            $select_customer = "select customer_name, customer_email, customer_contact, customer_address_1, customer_address_2, customer_city, customer_state, customer_pincode FROM customers WHERE customer_id=$customer_id";
                             $run_customer = mysqli_query($con, $select_customer);
 
                             $row_customer = mysqli_fetch_array($run_customer);
@@ -96,11 +96,14 @@ $total_pgo = mysqli_num_rows($result_pgo);
 
                                 <td>$order_id</td>
                                 <td>$invoice_no</td>
-                                <td>$row_customer[0]<br>
-                                    $row_customer[1]<br>
-                                    $row_customer[2]<br>
+                                <td><b>$row_customer[0]</b><br>
                                     $row_customer[3]<br>
-                                    $row_customer[4]
+                                    $row_customer[4]<br>
+                                    $row_customer[5],
+                                    $row_customer[6], PIN: 
+                                    $row_customer[7]<br> E-mail:
+                                    $row_customer[1]<br> Phone:
+                                    $row_customer[2]
                                 </td>
                                 <td>$product_title</td>
                                 <td>$qty</td>
