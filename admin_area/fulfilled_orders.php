@@ -104,7 +104,9 @@ $total_gco = mysqli_num_rows($result_gco);
                                 <td>$order_date</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
-                                <td>$due_amount</td>
+                                <td>$due_amount + 49 = 
+                                    ".($due_amount + 49)."
+                                </td>
                                 
 
                             </tr> <!-- tr ends -->
@@ -261,7 +263,9 @@ $total_gco = mysqli_num_rows($result_gco);
                                 <td>$order_date</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
-                                <td>$due_amount</td>
+                                <td>$due_amount + 49 = 
+                                    ".($due_amount + 49)."
+                                </td>
                                 
 
                             </tr> <!-- tr ends -->

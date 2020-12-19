@@ -223,21 +223,21 @@ include("includes/header.php");
 
                                 <tr> <!-- tr begins -->
                                     <td>Shipping and handling</td>
-                                    <td>Rs. 80</td>
+                                    <td>Rs. 49</td>
                                     <?php
-                                    $shipping_fee = 0;
+                                    $shipping_fee = 49;
                                     //to do
                                     ?>
                                 </tr> <!-- tr ends -->
 
                                 <tr> <!-- tr begins -->
-                                    <td>Tax</td>
-                                    <th>Rs. 0</th>
+                                    <!-- <td>Tax</td>
+                                    <th>Rs. 0</th> -->
                                 </tr> <!-- tr ends -->
 
                                 <tr class="total"> <!-- tr begins -->
                                     <td>Total</td>
-                                    <th>&#8377;<?php echo $total; ?></th>
+                                    <th>&#8377;<?php echo $total + $shipping_fee; ?></th>
                                 </tr> <!-- tr ends -->
                                 
                             </tbody> <!-- tbody ends -->

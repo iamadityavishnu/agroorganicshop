@@ -72,14 +72,14 @@
                 <ul class="nav child_menu">
                   <li><a href="index.php">Dashboard</a></li>
                   <li><a href="index.php?all_products">All Products</a></li>
+                  <li><a href="index.php?insert_products">Insert Products</a></li>
                 </ul>
               </li>
-              <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+              <li><a><i class="fa fa-shopping-cart"></i> Orders <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                   <li><a href="index.php">New Orders</a></li>
                   <li><a href="index.php?shipped_orders">Shipped Orders</a></li>
                   <li><a href="index.php?fulfilled_orders">Fulfilled Orders</a></li>
-                  <li><a href="index.php?insert_products">Insert Products</a></li>
                 </ul>
               </li>
               <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>

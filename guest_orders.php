@@ -19,37 +19,48 @@ $select_cart = "select * from cart where ip_add='$ip_add'";
 
 $run_cart = mysqli_query($con,$select_cart);
 
-while($row_cart = mysqli_fetch_array($run_cart)){
-    $pro_id = $row_cart['p_id'];
-    $pro_qty = $row_cart['qty'];
-    $pro_weight = $row_cart['weight']; // ADD PRICE FROM CART
+$cart_count = mysqli_num_rows($run_cart);
 
-    $get_products = "select * from products where product_id='$pro_id'";
+if($cart_count != 0){
+    while($row_cart = mysqli_fetch_array($run_cart)){
+        $pro_id = $row_cart['p_id'];
+        $pro_qty = $row_cart['qty'];
+        $pro_weight = $row_cart['weight'];
+        $pro_price = $row_cart['price'];
 
-    $run_products = mysqli_query($con,$get_products);
+        $get_products = "select * from products where product_id='$pro_id'";
 
-    while($row_products = mysqli_fetch_array($run_products)){
-        $sub_total = $row_products['product_price']*$pro_qty; // TO EDIT
-        $product_id = $row_products['product_id'];
-        $product_title = $row_products['product_title'];
-        $product_thumb = $row_products['product_img1'];
-        $insert_customer_order = "insert into guest_customer_orders (customer_id, product_id, product_title, product_thumbnail, due_amount, invoice_no, qty, weight, order_date, order_status)
-        values('$customer_id','$product_id','$product_title','$product_thumb','$sub_total','$invoice_no','$pro_qty','$pro_weight',NOW(),'$status')";
-        $run_customer_order = mysqli_query($con,$insert_customer_order);
-        
-        $insert_pending_order = "insert into pending_guest_orders (customer_id, invoice_no, product_id, product_title, amount_paid, date_of_purchase, qty, weight, order_status)
-        values('$customer_id','$invoice_no','$pro_id','$product_title','$sub_total',NOW(),'$pro_qty','$pro_weight','$status')";
+        $run_products = mysqli_query($con,$get_products);
 
-        $run_pending_order = mysqli_query($con,$insert_pending_order);
+        while($row_products = mysqli_fetch_array($run_products)){
+            $sub_total = $pro_price * $pro_qty;
+            $product_id = $row_products['product_id'];
+            $product_title = $row_products['product_title'];
+            $product_thumb = $row_products['product_img1'];
+            $insert_customer_order = "insert into guest_customer_orders (customer_id, product_id, product_title, product_thumbnail, due_amount, invoice_no, qty, weight, order_date, order_status)
+            values('$customer_id','$product_id','$product_title','$product_thumb','$sub_total','$invoice_no','$pro_qty','$pro_weight',NOW(),'$status')";
+            $run_customer_order = mysqli_query($con,$insert_customer_order);
+            
+            $insert_pending_order = "insert into pending_guest_orders (customer_id, invoice_no, product_id, product_title, amount_paid, date_of_purchase, qty, weight, order_status)
+            values('$customer_id','$invoice_no','$pro_id','$product_title','$sub_total',NOW(),'$pro_qty','$pro_weight','$status')";
 
-        $delete_cart = "delete from cart where ip_add='$ip_add'";
+            $run_pending_order = mysqli_query($con,$insert_pending_order);
 
-        $run_delete_cart = mysqli_query($con,$delete_cart);
+            $delete_cart = "delete from cart where ip_add='$ip_add'";
 
+            $run_delete_cart = mysqli_query($con,$delete_cart);
+
+        }
     }
-}
 
-echo "<script>alert('Your order has been submitted. Updates will be sent via mail')</script>";
-echo "<script>window.open('index.php','_self')</script>";
+    echo "<script>alert('Your order has been submitted. Updates will be sent via mail')</script>";
+    echo "<script>window.open('confirmation.php','_self')</script>";
+
+}else{
+
+    echo "<script>alert('Your cart is empty!')</script>";
+    echo "<script>window.open('shop.php','_self')</script>";
+
+}
 
 ?>

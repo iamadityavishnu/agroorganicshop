@@ -82,8 +82,8 @@
                     <br>Kottayam
                     <br>Kerala, India
                     <br>686509
-                    <br><a href="tel:+919947189437">+91 99471 89437</a>
-                    <br><a href="mailto:adityavishnu3610@gmail.com">adityavishnu3610@gmail.com</a>
+                    <br><a href="tel:+919447486437">+91 94474 86437</a>
+                    <br><a href="mailto:ayurandnaturals@gmail.com">ayurandnaturals@gmail.com</a>
                 
                 </p> <!-- p ends -->
 

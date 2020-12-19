@@ -38,7 +38,7 @@ $total_pgo = mysqli_num_rows($result_pgo);
                         <th>Product </th>
                         <th>Quantity </th>
                         <th>Weight </th>
-                        <th>Amount Paid </th>
+                        <th>Due Amount </th>
                         <th>Order Date </th>
                         <th>Mark as shipped </th>
 
@@ -79,7 +79,6 @@ $total_pgo = mysqli_num_rows($result_pgo);
                             $date_of_purchase = $row_orders['date_of_purchase'];
                             $qty = $row_orders['qty'];
                             $weight = $row_orders['weight'];
-                            // $is_guest = $row_orders['guest_customer'];
 
                             if($weight<1000){$weight_unit = "Grams";}else{ $weight = $weight/1000; $weight_unit = "Kg";}
             
@@ -108,7 +107,9 @@ $total_pgo = mysqli_num_rows($result_pgo);
                                 <td>$product_title</td>
                                 <td>$qty</td>
                                 <td>$weight $weight_unit</td>
-                                <td>&#8377; $amount_paid</td>
+                                <td>&#8377; $amount_paid + 49 = 
+                                ".($amount_paid + 49)."
+                                </td>
                                 <td>$date_of_purchase</td>
                                 <td><button type='submit' name='shipped[]' value='$order_id'>&#128666 &#9989</button></td>
 
@@ -205,7 +206,7 @@ $total_pgo = mysqli_num_rows($result_pgo);
                             <th>Product </th>
                             <th>Quantity </th>
                             <th>Weight </th>
-                            <th>Amount Paid </th>
+                            <th>Due Amount </th>
                             <th>Order Date </th>
                             <th>Mark as shipped </th>
 
@@ -275,7 +276,9 @@ $total_pgo = mysqli_num_rows($result_pgo);
                                     <td>$product_title</td>
                                     <td>$qty</td>
                                     <td>$weight $weight_unit</td>
-                                    <td>&#8377; $amount_paid</td>
+                                    <td>&#8377; $amount_paid + 49 = 
+                                    ".($amount_paid + 49)."
+                                    </td>
                                     <td>$date_of_purchase</td>
                                     <td><button type='submit' name='guest_shipped[]' value='$order_id'>&#128666 &#9989</button></td>
 

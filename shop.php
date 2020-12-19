@@ -41,7 +41,7 @@ include("includes/header.php");
                             <div class='box'> <!-- box begins -->
 
                                 <h1>Shop</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatem, facilis.</p>
+                                <p>Shop our best products. 6 items per page</p>
 
                             </div> <!-- box ends -->
 

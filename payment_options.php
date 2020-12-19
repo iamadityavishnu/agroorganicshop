@@ -8,16 +8,48 @@
         $customer_id = $row_customer['customer_id'];
     ?>
 
-    <h1 class="text-center">Payment Options</h1>
-    <p class="lead text-center">
-        <a href="orders.php?c_id=<?php echo $customer_id; ?>">Offline Payment</a>
-    </p>
+    <h1 class="text-center">Checkout</h1>
+
+    <br>
+
+    <!-- <center>
+        <p class="text-muted" style="width: 80%;">
+            Click on "Place Order".
+        </p>
+    </center> -->
+
+    <br>
+    
     <center>
+    <p class="lead text-center">
+
+        <a class="btn btn-primary" href="whatsapp_order.php?c_id=<?php echo $customer_id; ?>">
+            <i class="fa fa-whatsapp"></i><b> Order via WhatsApp</b>
+        </a>
+        <br>
+        
+        <p class="text text-muted">- or -</p>
+
+        <br>
+        <a class="btn btn-primary" href="orders.php?c_id=<?php echo $customer_id; ?>">
+            <b>Place Order Directly</b>
+        </a>
+
+    </p>
+    </center>
+
+    <center>
+        <a href="orders.php?c_id=<?php echo $customer_id; ?>"><img class="img-responsive" width="350px" src="images/illustrations/urban-685.png"></a>
+    </center>
+    <br>
+
+    <!-- <center>
         <p class="lead">
-            <a href="#">
-            Paypal
+            <a class="btn btn-default" href="#">
+            Order
             <img src="" alt="" class="img-responsive">
             </a>
         </p>
-    </center>
+    </center> -->
+
 </div>
