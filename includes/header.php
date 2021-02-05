@@ -41,7 +41,7 @@ if(isset($_GET['pro_id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organic Basket | Home</title>
+    <title>Ayur Naturals | Home</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -112,8 +112,8 @@ if(isset($_GET['pro_id'])){
             <div class="navbar-header"> <!-- navbar-header start -->
 
                 <a href="index.php" class="navbar-brand home"> <!-- navbar-brand home start -->
-                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="hidden-xs"> <!-- i made a change here -->
-                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Organic Basket Logo" class="visible-xs">
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Ayur Naturals Logo" class="hidden-xs"> <!-- i made a change here -->
+                    <img src="images/ayur-naturals-logo.png" height="45px" alt="Ayur Naturals Logo" class="visible-xs">
                 </a> <!-- navbar-brand home finish -->
 
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

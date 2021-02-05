@@ -353,7 +353,7 @@ $total_gco = mysqli_num_rows($result_gco);
 
             $update_order = "update guest_customer_orders SET order_status='delivered' WHERE order_id=$delivered_order_id";
             $run_update_order = mysqli_query($con, $update_order);
-            echo "<script>window.open('index.php?shipped_orders','_self')</script>";
+            echo "<script>window.open('index.php?shipped_orders&page=1&guest=1','_self')</script>";
         }
     }
 

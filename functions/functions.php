@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost","root","","ob_store");
+$db = mysqli_connect("localhost","ob_root","JustTesting123@/","ob_store");
 
 // Begin of getRealIpUser() function
 
@@ -34,6 +34,8 @@ function add_cart(){
         }else{
             $query = "insert into cart(p_id,ip_add,qty,weight,price) values ('$p_id','$ip_add','$product_qty','$product_wt','$price')";
             $run_query = mysqli_query($db,$query);
+
+            echo "<script>alert('Succesfully added to cart. Visit cart page to checkout')</script>";
             echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
         }
     }

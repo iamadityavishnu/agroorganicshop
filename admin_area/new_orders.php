@@ -389,7 +389,7 @@ $total_pgo = mysqli_num_rows($result_pgo);
             $delete_order = "delete from pending_guest_orders where order_id='$shipped_order_id'";
             $run_delete = mysqli_query($con, $delete_order);
             if($run_delete){
-                echo "<script>window.open('index.php','_self')</script>";
+                echo "<script>window.open('index.php?default_page=1&guest=1','_self')</script>";
             }
         }
     }
